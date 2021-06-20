@@ -1,0 +1,15 @@
+﻿@using MarioTravel.Admin.Infrastructure.AppSettingsModels
+@using Microsoft.Extensions.Options
+
+@inject IOptions<ScriptTags> OptionsScriptTags
+<!-- Open Graph data -->
+@if (!string.IsNullOrWhiteSpace(OptionsScriptTags.Value?.FacebookOpenGraph))
+{
+<meta property="fb:app_id" content="@OptionsScriptTags.Value.FacebookOpenGraph">
+}
+<meta property="og:title" content="Admin" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.creative-tim.com/live/argon-dashboard-asp-net" />
+<meta property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/162/opt_ad_asp_thumbnail.jpg" />
+<meta property="og:description" content="Dubrovnik Tours Administration" />
+<meta property="og:site_name" content="Mario Travel - Admin" />

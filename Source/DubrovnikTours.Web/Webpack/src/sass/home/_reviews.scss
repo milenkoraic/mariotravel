@@ -1,0 +1,174 @@
+@import '../mixins/flex';
+
+.reviews {
+    visibility: hidden;
+    padding: 0px 20px !important;
+
+    @media (min-width: 1200px) {
+        padding: 40px 80px !important;
+    }
+
+    &-container {
+        @include flex(center, center, column);
+
+        @media (min-width: 1200px) {
+            @include flex(center, flex-start, row);
+        }
+    }
+
+    &-title {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 27px;
+        color: $text-dark;
+        margin-bottom: 20px;
+        text-align: center;
+
+        @media (min-width: 768px) {
+            text-align: left;
+            padding-left: 290px;
+        }
+    }
+
+    &-slider-container {
+        width: 100%;
+        max-width: 320px;
+
+        @media (min-width: 400px) {
+            max-width: 380px;
+        }
+
+        @media (min-width: 580px) {
+            max-width: 460px;
+        }
+
+        @media (min-width: 768px) {
+            max-width: 700px;
+        }
+
+        @media (min-width: 992px) {
+            max-width: 830px;
+            padding-left: 30px;
+        }
+    }
+
+    &-badge {
+        margin-bottom: 30px;
+
+        @media (min-width: 1200px) {
+            margin-right: 0px;
+            margin-bottom: 0;
+        }
+    }
+
+    &-right {
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 170px;
+            height: 120px;
+            background: url(#{$appIconsPath}quotes.svg);
+            transform: translate(-1%, -10%);
+            z-index: 1;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 170px;
+            height: 120px;
+            background: url(#{$appIconsPath}quotes.svg);
+            transform: translate(10%, -55%) rotateZ(180deg);
+            z-index: 0;
+            margin-bottom: 50px;
+        }
+    }
+
+    &-actions {
+        margin-bottom: 50px;
+        @include flex(space-between, center);
+
+        svg {
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            transform: scale(0.8);
+
+            path,
+            circle {
+                transition: all 0.2s ease-in-out;
+            }
+
+            &:hover {
+                transform: scale(0.9);
+
+                circle {
+                    fill: $secondary;
+                }
+
+                path {
+                    stroke: $white;
+                }
+            }
+        }
+
+        .btn {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin: 5px;
+        }
+    }
+
+    &-review {
+        &-header {
+            @include flex(space-between, flex-end);
+
+            &-rating {
+                &-stars {
+                    img {
+                        display: inline-block;
+                    }
+                }
+
+                span {
+                    font-size: 14px;
+                    color: $text-gray;
+                    font-weight: 500;
+                }
+            }
+
+            &-date {
+                font-size: 14px;
+                color: $text-gray;
+                font-weight: 500;
+            }
+        }
+
+        &-body {
+            color: $text-gray;
+            background-color: $white;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 21px;
+            height: 250px;
+            overflow: auto;
+
+            @media (max-width: 991px) {
+                height: 440px;
+            }
+        }
+
+        &-footer {
+            background-color: $white;
+            font-size: 14px;
+            line-height: 21px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+    }
+}

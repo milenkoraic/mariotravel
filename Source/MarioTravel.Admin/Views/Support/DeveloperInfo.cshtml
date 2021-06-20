@@ -1,0 +1,556 @@
+﻿@{
+    ViewData["Title"] = "DeveloperInfo";
+}
+
+<div class="dashboard-separator">
+    <h1 class="dashboard-separator-title text-center">Support</h1>
+</div>
+<p class="text-uppercase text-center" style="font-weight:bold;">Hover over or touch to connect</p>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+<style>
+    /* --- developer-card Card ---- */
+    #make-3D-space {
+        margin-top: 370px;
+        position: relative;
+        perspective: 800px;
+        width: 340px;
+        height: 500px;
+        transform-style: preserve-3d;
+        transition: transform 5s;
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        margin-left: -172px;
+        margin-bottom: 100px;
+    }
+
+    #developer-card-front, #developer-card-back {
+        width: 335px;
+        height: 500px;
+        background: #fff;
+        position: absolute;
+        left: -5px;
+        top: -5px;
+        -webkit-transition: all 100ms ease-out;
+        -moz-transition: all 100ms ease-out;
+        -o-transition: all 100ms ease-out;
+        transition: all 100ms ease-out;
+    }
+
+    #developer-card-back {
+        display: none;
+        transform: rotateY( 180deg );
+    }
+
+    #developer-card-card.animate #developer-card-back, #developer-card-card.animate #developer-card-front {
+        top: 0px;
+        left: 0px;
+        -webkit-transition: all 100ms ease-out;
+        -moz-transition: all 100ms ease-out;
+        -o-transition: all 100ms ease-out;
+        transition: all 100ms ease-out;
+    }
+
+    #developer-card-card {
+        width: 325px;
+        height: 490px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        overflow: hidden;
+        transform-style: preserve-3d;
+        -webkit-transition: 100ms ease-out;
+        -moz-transition: 100ms ease-out;
+        -o-transition: 100ms ease-out;
+        transition: 100ms ease-out;
+    }
+
+    div#developer-card-card.flip-10 {
+        -webkit-transform: rotateY( -10deg );
+        -moz-transform: rotateY( -10deg );
+        -o-transform: rotateY( -10deg );
+        transform: rotateY( -10deg );
+        transition: 50ms ease-out;
+    }
+
+    div#developer-card-card.flip90 {
+        -webkit-transform: rotateY( 90deg );
+        -moz-transform: rotateY( 90deg );
+        -o-transform: rotateY( 90deg );
+        transform: rotateY( 90deg );
+        transition: 100ms ease-in;
+    }
+
+    div#developer-card-card.flip190 {
+        -webkit-transform: rotateY( 190deg );
+        -moz-transform: rotateY( 190deg );
+        -o-transform: rotateY( 190deg );
+        transform: rotateY( 190deg );
+        transition: 100ms ease-out;
+    }
+
+    div#developer-card-card.flip180 {
+        -webkit-transform: rotateY( 180deg );
+        -moz-transform: rotateY( 180deg );
+        -o-transform: rotateY( 180deg );
+        transform: rotateY( 180deg );
+        transition: 150ms ease-out;
+    }
+
+    #developer-card-card.animate {
+        top: 5px;
+        left: 5px;
+        width: 335px;
+        height: 500px;
+        box-shadow: 0px 13px 21px -5px rgba(0, 0, 0, 0.3);
+        -webkit-transition: 100ms ease-out;
+        -moz-transition: 100ms ease-out;
+        -o-transition: 100ms ease-out;
+        transition: 100ms ease-out;
+    }
+
+    .stats-container {
+        background: #fff;
+        position: absolute;
+        top: 386px;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        padding: 27px 35px 35px;
+        -webkit-transition: all 200ms ease-out;
+        -moz-transition: all 200ms ease-out;
+        -o-transition: all 200ms ease-out;
+        transition: all 200ms ease-out;
+    }
+
+    #developer-card-card.animate .stats-container {
+        top: 272px;
+        -webkit-transition: all 200ms ease-out;
+        -moz-transition: all 200ms ease-out;
+        -o-transition: all 200ms ease-out;
+        transition: all 200ms ease-out;
+    }
+
+    .stats-container .developer-card_name {
+        font-size: 22px;
+        color: #393c45;
+    }
+
+    .stats-container p {
+        font-size: 16px;
+        color: #b1b1b3;
+        padding: 2px 0 20px 0;
+    }
+
+    .stats-container .developer-card_price {
+        float: right;
+        color: #48cfad;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .image_overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #5B62E1;
+        opacity: 0;
+    }
+
+    #developer-card-card.animate .image_overlay {
+        opacity: 0.7;
+        -webkit-transition: all 200ms ease-out;
+        -moz-transition: all 200ms ease-out;
+        -o-transition: all 200ms ease-out;
+        transition: all 200ms ease-out;
+    }
+
+    .developer-card-options {
+        padding: 2px 0 0;
+    }
+
+        .developer-card-options strong {
+            font-weight: 700;
+            color: #393c45;
+            font-size: 14px;
+        }
+
+        .developer-card-options span {
+            color: #969699;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+    #view_details {
+        position: absolute;
+        top: 112px;
+        left: 50%;
+        margin-left: -85px;
+        border: 2px solid #fff;
+        color: #fff;
+        font-size: 19px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 10px 0;
+        width: 172px;
+        opacity: 0;
+        -webkit-transition: all 200ms ease-out;
+        -moz-transition: all 200ms ease-out;
+        -o-transition: all 200ms ease-out;
+        transition: all 200ms ease-out;
+    }
+
+        #view_details:hover {
+            background: #fff;
+            color: #5B62E1;
+            cursor: pointer;
+        }
+
+    #developer-card-card.animate #view_details {
+        opacity: 1;
+        width: 152px;
+        font-size: 15px;
+        margin-left: -75px;
+        top: 115px;
+        -webkit-transition: all 200ms ease-out;
+        -moz-transition: all 200ms ease-out;
+        -o-transition: all 200ms ease-out;
+        transition: all 200ms ease-out;
+    }
+
+    div.shadow {
+        width: 335px;
+        height: 520px;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        display: none;
+        background: -webkit-linear-gradient(left,rgba(0,0,0,0.1),rgba(0,0,0,0.2));
+        background: -o-linear-gradient(right,rgba(0,0,0,0.1),rgba(0,0,0,0.2));
+        background: -moz-linear-gradient(right,rgba(0,0,0,0.1),rgba(0,0,0,0.2));
+        background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.2));
+    }
+
+    #developer-card-back div.shadow {
+        z-index: 10;
+        opacity: 1;
+        background: -webkit-linear-gradient(left,rgba(0,0,0,0.2),rgba(0,0,0,0.1));
+        background: -o-linear-gradient(right,rgba(0,0,0,0.2),rgba(0,0,0,0.1));
+        background: -moz-linear-gradient(right,rgba(0,0,0,0.2),rgba(0,0,0,0.1));
+        background: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.1));
+    }
+
+    #flip-back {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    #cx, #cy {
+        background: #d2d5dc;
+        position: absolute;
+        width: 0px;
+        top: 15px;
+        right: 15px;
+        height: 3px;
+        -webkit-transition: all 250ms ease-in-out;
+        -moz-transition: all 250ms ease-in-out;
+        -o-transition: all 250ms ease-in-out;
+        transition: all 250ms ease-in-out;
+    }
+
+    #flip-back:hover #cx, #flip-back:hover #cy {
+        background: #979ca7;
+        -webkit-transition: all 250ms ease-in-out;
+        -moz-transition: all 250ms ease-in-out;
+        -o-transition: all 250ms ease-in-out;
+        transition: all 250ms ease-in-out;
+    }
+
+    #cx.s1, #cy.s1 {
+        right: 0;
+        width: 30px;
+        -webkit-transition: all 100ms ease-out;
+        -moz-transition: all 100ms ease-out;
+        -o-transition: all 100ms ease-out;
+        transition: all 100ms ease-out;
+    }
+
+    #cy.s2 {
+        -ms-transform: rotate(50deg);
+        -webkit-transform: rotate(50deg);
+        transform: rotate(50deg);
+        -webkit-transition: all 100ms ease-out;
+        -moz-transition: all 100ms ease-out;
+        -o-transition: all 100ms ease-out;
+        transition: all 100ms ease-out;
+    }
+
+    #cy.s3 {
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: all 100ms ease-out;
+        -moz-transition: all 100ms ease-out;
+        -o-transition: all 100ms ease-out;
+        transition: all 100ms ease-out;
+    }
+
+    #cx.s1 {
+        right: 0;
+        width: 30px;
+        -webkit-transition: all 100ms ease-out;
+        -moz-transition: all 100ms ease-out;
+        -o-transition: all 100ms ease-out;
+        transition: all 100ms ease-out;
+    }
+
+    #cx.s2 {
+        -ms-transform: rotate(140deg);
+        -webkit-transform: rotate(140deg);
+        transform: rotate(140deg);
+        -webkit-transition: all 100ms ease-out;
+        -moz-transition: all 100ms ease-out;
+        -o-transition: all 100ms ease-out;
+        transition: all 100ms ease-out;
+    }
+
+    #cx.s3 {
+        -ms-transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+        -webkit-transition: all ease-out;
+        -moz-transition: all 100ms ease-out;
+        -o-transition: all 100ms ease-out;
+        transition: all 100ms ease-out;
+    }
+
+    #carousel {
+        width: 335px;
+        height: 500px;
+        overflow: hidden;
+        position: relative;
+    }
+
+        #carousel ul {
+            position: absolute;
+            top: 60px;
+            left: 0;
+        }
+
+        #carousel li {
+            width: 100%;
+            text-align: center;
+            height: 500px;
+            padding-right: 30px;
+            margin-top: 20px;
+            float: left;
+            overflow: hidden;
+        }
+
+    .arrows-perspective {
+        width: 335px;
+        height: 55px;
+        position: absolute;
+        top: 218px;
+        transform-style: preserve-3d;
+        transition: transform 5s;
+        perspective: 335px;
+    }
+
+    #carousel .x, #carousel .y {
+        height: 2px;
+        width: 15px;
+        background: #48cfad;
+        position: absolute;
+        top: 31px;
+        left: 17px;
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    #carousel .x {
+        -ms-transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+        top: 21px;
+    }
+
+    #carousel .carouselNext .x {
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    #carousel .carouselNext .y {
+        -ms-transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+
+    footer {
+        display: none;
+    }
+</style>
+
+<div id="make-3D-space">
+    <div id="developer-card-card">
+        <div id="developer-card-front">
+            <div class="shadow"></div>
+            <img src="/img/support/webdev.jpg" alt="" style="height:65%;width:100%;padding:30px;" />
+            <div class="image_overlay"></div>
+            <div id="view_details">CONNECT</div>
+            <div class="stats">
+                <div class="stats-container" style="width:100% !important;text-align:center">
+                    <span class="developer-card_name">Milenko Raič</span>
+                    <p>Web Developer</p>
+                    <p>
+                        <b style="font-weight:bold;color:darkgrey;">Company:</b><br />
+                        Mario Travel d.o.o.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="developer-card-back">
+            <div class="shadow"></div>
+            <div id="carousel">
+                <ul>
+                    <li>
+                        <img src="~/img/support/outlook.jpg" style="height:64px;width:64px;margin-bottom:10px;" />
+                        <p>milenko.raic@hotmail.com</p>
+                        <a href="mailto:milenko.raic@hotmail.com" target="_blank" class="btn btn-icon btn-3 btn-primary bg-blue btn-clear" type="button">
+                            <span class="btn-inner--icon"><i class="ni ni-send"></i></span>
+                            <span class="btn-inner--text">SEND EMAIL</span>
+                        </a>
+                        <hr />
+                        <img src="~/img/support/phone.jpg" style="height:60px;width:60px;margin-bottom:10px;" />
+                        <p>+385 95 519 4453</p>
+                        <a href="tel:+385955194453" target="_blank" class="btn btn-icon btn-3 btn-primary bg-success btn-clear" type="button">
+                            <span class="btn-inner--icon"><i class="ni ni-mobile-button"></i></span>
+                            <span class="btn-inner--text">MAKE A CALL</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="flip-back">
+                <div id="cy"></div>
+                <div id="cx"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+
+        // Lift card and show stats on Mouseover
+        $('#developer-card-card').hover(function () {
+            $(this).addClass('animate');
+            $('div.carouselNext, div.carouselPrev').addClass('visible');
+        }, function () {
+            $(this).removeClass('animate');
+            $('div.carouselNext, div.carouselPrev').removeClass('visible');
+        });
+
+        // Flip card to the back side
+        $('#view_details').click(function () {
+            $('div.carouselNext, div.carouselPrev').removeClass('visible');
+            $('#developer-card-card').addClass('flip-10');
+            setTimeout(function () {
+                $('#developer-card-card').removeClass('flip-10').addClass('flip90').find('div.shadow').show().fadeTo(80, 1, function () {
+                    $('#developer-card-front, #developer-card-front div.shadow').hide();
+                });
+            }, 50);
+
+            setTimeout(function () {
+                $('#developer-card-card').removeClass('flip90').addClass('flip190');
+                $('#developer-card-back').show().find('div.shadow').show().fadeTo(90, 0);
+                setTimeout(function () {
+                    $('#developer-card-card').removeClass('flip190').addClass('flip180').find('div.shadow').hide();
+                    setTimeout(function () {
+                        $('#developer-card-card').css('transition', '100ms ease-out');
+                        $('#cx, #cy').addClass('s1');
+                        setTimeout(function () { $('#cx, #cy').addClass('s2'); }, 100);
+                        setTimeout(function () { $('#cx, #cy').addClass('s3'); }, 200);
+                        $('div.carouselNext, div.carouselPrev').addClass('visible');
+                    }, 100);
+                }, 100);
+            }, 150);
+        });
+
+        // Flip card back to the front side
+        $('#flip-back').click(function () {
+
+            $('#developer-card-card').removeClass('flip180').addClass('flip190');
+            setTimeout(function () {
+                $('#developer-card-card').removeClass('flip190').addClass('flip90');
+
+                $('#developer-card-back div.shadow').css('opacity', 0).fadeTo(100, 1, function () {
+                    $('#developer-card-back, #developer-card-back div.shadow').hide();
+                    $('#developer-card-front, #developer-card-front div.shadow').show();
+                });
+            }, 50);
+
+            setTimeout(function () {
+                $('#developer-card-card').removeClass('flip90').addClass('flip-10');
+                $('#developer-card-front div.shadow').show().fadeTo(100, 0);
+                setTimeout(function () {
+                    $('#developer-card-front div.shadow').hide();
+                    $('#developer-card-card').removeClass('flip-10').css('transition', '100ms ease-out');
+                    $('#cx, #cy').removeClass('s1 s2 s3');
+                }, 100);
+            }, 150);
+
+        });
+
+        /* ----  Image Gallery Carousel   ---- */
+
+        var carousel = $('#carousel ul');
+        var carouselSlideWidth = 335;
+        var carouselWidth = 0;
+        var isAnimating = false;
+
+        // building the width of the casousel
+        $('#carousel li').each(function () {
+            carouselWidth += carouselSlideWidth;
+        });
+        $(carousel).css('width', carouselWidth);
+
+        // Load Next Image
+        $('div.carouselNext').on('click', function () {
+            var currentLeft = Math.abs(parseInt($(carousel).css("left")));
+            var newLeft = currentLeft + carouselSlideWidth;
+            if (newLeft == carouselWidth || isAnimating === true) { return; }
+            $('#carousel ul').css({
+                'left': "-" + newLeft + "px",
+                "transition": "300ms ease-out"
+            });
+            isAnimating = true;
+            setTimeout(function () { isAnimating = false; }, 300);
+        });
+
+        // Load Previous Image
+        $('div.carouselPrev').on('click', function () {
+            var currentLeft = Math.abs(parseInt($(carousel).css("left")));
+            var newLeft = currentLeft - carouselSlideWidth;
+            if (newLeft < 0 || isAnimating === true) { return; }
+            $('#carousel ul').css({
+                'left': "-" + newLeft + "px",
+                "transition": "300ms ease-out"
+            });
+            isAnimating = true;
+            setTimeout(function () { isAnimating = false; }, 300);
+        });
+    });
+</script>

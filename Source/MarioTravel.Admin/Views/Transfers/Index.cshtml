@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Transfers";
+}
+<div class="dashboard-separator">
+    <h1 class="dashboard-separator-title text-center">Transfers</h1>
+</div>
+<!-- Transfer Cards -->
+<section id="transfer" class="pb-5">
+    <div class="container transfer">
+        <div class="row">
+            <!-- Transfer Card -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <p><img class="card-img" src="/img/theme/suv.jpg" alt="card image"></p>
+                        <h3 class="card-title">SUV PRICES</h3>
+                        <label>Suv price per km</label>
+                        <input type="number" required name="price" min="1" value="10" step="any" disabled>
+                        <label>Suv start price (-10km)</label>
+                        <input type="number" required name="price" min="1" value="55" step="any" disabled>
+                        <label>Suv start price (+10km)</label>
+                        <input type="number" required name="price" min="1" value="30" step="any" disabled>
+                        <div class="card-footer">
+                            <button class="btn btn-icon btn-3 text-orange" type="button">
+                                <span class="btn-inner--icon"><i class="ni ni-ruler-pencil"></i></span>
+                                <span class="btn-inner--text">EDIT</span>
+                            </button>
+                            <button class="btn btn-icon btn-3 text-success" type="button">
+                                <span class="btn-inner--icon"><i class="ni ni-check-bold"></i></span>
+                                <span class="btn-inner--text">SAVE</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Transfer Card -->
+            <!-- Transfer Card -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <p><img class="card-img" src="/img/theme/van.jpg" alt="card image"></p>
+                        <h3 class="card-title">VAN PRICES</h3>
+                        <label>Van price per km</label>
+                        <input type="number" required name="price" min="1" value="13.5" step="any" disabled>
+                        <label>Van start price (-10km)</label>
+                        <input type="number" required name="price" min="1" value="70" step="any" disabled>
+                        <label>Van start price (+10km)</label>
+                        <input type="number" required name="price" min="1" value="40" step="any" disabled>
+                        <div class="card-footer">
+                            <button class="btn btn-icon btn-3 text-orange" type="button">
+                                <span class="btn-inner--icon"><i class="ni ni-ruler-pencil"></i></span>
+                                <span class="btn-inner--text">EDIT</span>
+                            </button>
+                            <button class="btn btn-icon btn-3 text-success" type="button">
+                                <span class="btn-inner--icon"><i class="ni ni-check-bold"></i></span>
+                                <span class="btn-inner--text">SAVE</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Transfer Card -->
+        </div>
+    </div>
+</section>
+<!-- Transfer Cards -->

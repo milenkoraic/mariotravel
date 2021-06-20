@@ -1,0 +1,60 @@
+version: '3.4'
+
+services:
+
+  web-proxy:
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - dubrovniktours.web
+      - cablecardubrovnik.web
+      - mariotravel.admin
+
+  dubrovniktours.web:
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - db
+      - mail-server
+
+  cablecardubrovnik.web:
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - db
+      - mail-server
+
+  mariotravel.admin:
+    ports:
+      - "5002:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - db
+      - mail-server
+
+  db:
+    container_name: mariotravel-database
+    image: postgres:10.13
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: dbpass
+    volumes:
+      - ./Source/MarioTravel.Database/Initialization:/docker-entrypoint-initdb.d/
+      - pgdata:/var/lib/postgresql/data
+
+  mail-server:
+    container_name: mariotravel-mail-server
+    image: djfarrelly/maildev
+    ports:
+      - "5005:80"
+
+volumes:
+  pgdata:
+    name: mariotravel-data

@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model CableCarDubrovnik.Web.Models.ContactUs.ContactUsFormViewModel
+<img class="contact-us-img" src="/img/contact-us/contact-header.jpg" />
+<div class="container-fluid contact-us">
+    <div class="container contact-us-form-container">
+        <h3>@Localizer["Contact us"]</h3>
+        <p>
+            @Localizer["Has your e-mail for booking confirmation strayed somehwere off the path? Worry not! You can easily contact us through filling out the form below, or if you prefer calls or e-mails you can contact us through provided contact information. You can use the same form and contact information if you want some additional informations or have any other questions. We are glad to help! :)"]
+        </p>
+        <form id="contact-us" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="contact-us-form">
+            <div class="form-group">
+                <label asp-for="@Model.Name">@Localizer["Full name"]</label>
+                <input asp-for="@Model.Name" name="name" placeholder="@Localizer["Full name"]..." class="form-control" type="text" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Email">@Localizer["E-mail"]</label>
+                <input asp-for="@Model.Email" name="email" placeholder="@Localizer["E-mail"]..." class="form-control" type="email" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Subject">@Localizer["Subject"]</label>
+                <input asp-for="@Model.Subject" name="subject" placeholder="@Localizer["Subject"]..." class="form-control" type="text" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Message">@Localizer["Message"]</label>
+                <textarea asp-for="@Model.Message" name="message" class="form-control" rows="10" placeholder="@Localizer["Message"]..."></textarea>
+            </div>
+            <div class="form-group">
+                <button id="submit-contact-form" class="btn btn-primary" href="javascript:void(0)">@Localizer["SEND"]</button>
+            </div>
+            <div class="error" asp-validation-summary="All"></div>
+            <div class="success"></div>
+        </form>
+    </div>
+</div>
+<environment include="Development">
+    <script src="~/js/contact/contact.js"></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/js/contact/contact.min.js"></script>
+</environment>
+
+@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }

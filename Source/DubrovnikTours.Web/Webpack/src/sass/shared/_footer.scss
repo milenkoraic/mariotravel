@@ -1,0 +1,107 @@
+@import '../mixins/flex';
+
+.footer {
+    padding: 60px 0;
+    background: $footer-bg;
+
+    .container {
+        @include flex(center, center, column);
+
+        @media (min-width: 768px) {
+            @include flex(space-between, center, row);
+        }
+    }
+
+    &-info {
+        margin-bottom: 30px;
+        position: relative;
+        flex: 1;
+
+        @media (min-width: 768px) {
+            padding-left: 50px;
+            margin: 0;
+        }
+
+        &-ghost {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            font-weight: 700;
+            color: $white;
+            opacity: 0.05;
+
+            @media (min-width: 1200px) {
+                font-size: 80px;
+            }
+
+            @media (min-width: 1640px) {
+                font-size: 120px;
+            }
+        }
+
+        &-item {
+            @include flex(flex-start, center);
+            position: relative;
+            z-index: 2;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+            img,
+            svg {
+                margin-right: 25px;
+                width: 24px;
+                height: 24px;
+            }
+
+            span {
+                font-size: 14px;
+                color: $white;
+            }
+        }
+    }
+
+    &-social {
+        @media (min-width: 768px) {
+            padding-right: 50px;
+        }
+
+        h3 {
+            font-size: 14px;
+            color: $white;
+            margin-bottom: 30px;
+        }
+
+        &-icons {
+            @include flex(space-between, center);
+
+            &-icon {
+                transition: all 0.2s ease-in-out;
+
+                svg path {
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &:hover {
+                    transform: scale(1.1);
+
+                    svg path {
+                        fill: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.copyright {
+    font-size: 12px;
+    padding: 10px;
+    padding-top: 40px;
+    color: $text-light;
+    text-align: center;
+    background-color: $footer-bg;
+}

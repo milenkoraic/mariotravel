@@ -1,0 +1,41 @@
+﻿@using MarioTravel.Admin.Infrastructure.AppSettingsModels
+@using Microsoft.Extensions.Options
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+<meta name="description" content="Admin dashboard - Mario Travel Agency - Dubrovnik - Croatia">
+<meta name="author" content="Milenko Raic">
+<title>@ViewData["Title"] | Mario Travel</title>
+
+<!-- Favicon -->
+<link href="~/img/brand/favicon.png" rel="icon" type="image/png">
+
+<!-- Google FONT - Pacifico-->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link href="~/vendor/nucleo/css/nucleo.css" rel="stylesheet" asp-append-version="true">
+<link href="~/vendor/@@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" asp-append-version="true">
+
+<!-- Core -->
+<script src="~/vendor/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+<script src="~/vendor/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+
+<!-- Docs JS -->
+<script src="~/vendor/anchor-js/anchor.min.js" asp-append-version="true"></script>
+<script src="~/vendor/clipboard/dist/clipboard.min.js" asp-append-version="true"></script>
+<script src="~/vendor/holderjs/holder.min.js" asp-append-version="true"></script>
+<script src="~/vendor/prismjs/prism.js" asp-append-version="true"></script>
+
+<!-- Optional JS -->
+<script src="~/vendor/chart.js/dist/Chart.min.js" asp-append-version="true"></script>
+<script src="~/vendor/chart.js/dist/Chart.extension.js" asp-append-version="true"></script>
+<script src="~/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" asp-append-version="true"></script>
+
+@inject IOptions<ScriptTags> OptionsScriptTags
+
+<partial name="_ExternalScripts" />
+
+<partial name="_ThemeStyles" />
+
+<partial name="_OpenGraph" />

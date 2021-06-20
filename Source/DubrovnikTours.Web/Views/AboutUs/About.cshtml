@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+    <div class="page page-about">
+        <div class="page-header">
+            <div class="container">
+                <h3>@Localizer["Who are we?"]</h3>
+            </div>
+        </div>
+        <div class="container-fluid body-container">
+            <div class="page-about-content container">
+                <img src="~/img/about-us/info-illustration.svg" alt="Illustration icon" class="page-about-content-illustration" />
+                <p>
+                    @Localizer["We are a group of young professional licenced tourist guides, born and raised in Old Town of Dubrovnik. Our goal"]
+                    @Localizer["is to make your visit interesting, educative but also entertaining. Every private tour is custom made."]
+                    <br />
+                    <br />
+                    @Localizer["If you are a group with a few members interested in discovering history of Dubrovnik, and a few members that are"]
+                    @Localizer["big Game of Thrones fans, we can do a combined tour(GOT + Discover Old Town Dubrovnik tour).Please contact"]
+                    @Localizer["us, and go where YOU want to go and discover things that interest YOU!We are here for you!"]<br />
+                </p>
+            </div>
+        </div>
+        </div>

@@ -1,0 +1,41 @@
+//ADD SASS IMAGE VARIABLE PATHS FOR THE VIEWS HERE
+//-----------------------------------------------------------------
+
+//IMAGE HOSTING PATH - CURRENTLY [localhost]
+$hostingPath: '/';
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+
+//APP ICONS PATH
+$appIconsPath: "#{$hostingPath}ico/";
+//-----------------------------------------------------------------
+//LAYOUT VIEW IMAGE PATH
+$imageLayoutPath: "#{$hostingPath}img/layout/backgrounds/";
+//-----------------------------------------------------------------
+//ABOUT US VIEW IMAGE PATH
+$imageAboutUsPath: "#{$hostingPath}img/about-us/";
+//-----------------------------------------------------------------
+//CONTACT US VIEW IMAGE PATH
+$imageContactUsPath: "#{$hostingPath}img/contact-us/";
+//-----------------------------------------------------------------
+//COOKIES VIEW IMAGE PATH
+$imageCookiesPath: "#{$hostingPath}img/cookies/";
+//-----------------------------------------------------------------
+//HOME VIEW IMAGE PATH
+$imageHomePath: "#{$hostingPath}img/home/";
+//-----------------------------------------------------------------
+//MEETING POINT VIEW IMAGE PATH
+$imageMeetingPointPath: "#{$hostingPath}img/meeting-point/";
+//-----------------------------------------------------------------
+//PRIVACY POLICY VIEW IMAGE PATH
+$imagePrivacyPolicyPath: "#{$hostingPath}img/privacy-policy/";
+//-----------------------------------------------------------------
+//PRIVATE TOURS IMAGE PATH
+$imagePrivateToursPath: "#{$hostingPath}img/private-tours/";
+//-----------------------------------------------------------------
+//SCHEDULED TOURS VIEW IMAGE PATH
+$imageScheduledToursPath: "#{$hostingPath}img/scheduled-tours/";
+//-----------------------------------------------------------------
+//TRANSFERS VIEW IMAGE PATH
+$imageTransfersPath: "#{$hostingPath}img/transfers/";
+//-----------------------------------------------------------------

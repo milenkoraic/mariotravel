@@ -1,0 +1,26 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<div class="header-right">
+    <div class="header-language">
+        <div class="header-language-icon">
+            <img src="/ico/flag.png" alt="Globe Icon" />
+        </div>
+        <span class="header-language-name">@(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToUpper())</span>
+        <img src="~/ico/chevron-down.svg" class="header-language-chevron" alt="arrow-down">
+        <div class="header-language-pickers">
+            <a style="display:block;" asp-route-culture="en" id="english-language" class="header-language-pickers-picker @(CultureInfo.CurrentUICulture.Name == "en-US" ? "is-active" : string.Empty)" data-language="en-US">
+                <img class="header-language-image" src="~/img/layout/indicators/eng-flag.svg" />
+                ENG
+            </a>
+            <a style="display:block;" asp-route-culture="es" id="spanish-language" class="header-language-pickers-picker @(CultureInfo.CurrentUICulture.Name == "es" ? "is-active" : string.Empty)" data-language="es">
+                <img class="header-language-image" src="~/img/layout/indicators/esp-flag.svg" />
+                ESP
+            </a>
+        </div>
+    </div>
+    <form id="select-language" asp-controller="Home" asp-action="SetLanguage" method="POST" style="display: none;">
+        <input type="hidden" id="language" name="language" value="en-US" />
+    </form>
+</div>

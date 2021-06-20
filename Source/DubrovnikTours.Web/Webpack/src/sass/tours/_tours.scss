@@ -1,0 +1,79 @@
+@import '../mixins/flex';
+
+.page-tours {
+
+    &-cards-container{
+        width: 100%;
+        padding: 0;
+        background-color: $white;
+        @media (max-width: 991px) {
+            width: 100%;
+            margin: 0;
+            border-radius: 0;
+            box-shadow:none;
+        }
+        @media (min-width: 2000px) {
+            width: 70%;
+            margin-left: 15%;
+        }
+    }
+
+    &-private {
+        .page-header {
+            background-image: url(#{$imagePrivateToursPath}private-header.jpg);
+            height: 400px;
+
+            @media (max-width: 991px) {
+                height: 300px;
+            }
+        }
+    }
+
+    &-scheduled {
+        .page-header {
+            background-image: url(#{$imageScheduledToursPath}scheduled-header.jpg);
+            height: 400px;
+
+            @media (max-width: 991px) {
+                height: 300px;
+            }
+        }
+    }
+
+    &-cards {
+        background-image: url(#{$imageLayoutPath}page-tours-bg.png);
+        padding: 30px 10px;
+        position: relative;
+        z-index: 5;
+        width: 100%;
+        @include flex(space-between, stretch, row, wrap);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-flex;
+
+        @media (min-width: 991px) {
+            padding: 30px 120px !important;
+        }
+
+        .card {
+            width: 100%;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+            @media (min-width: 480px) {
+                width: 350px;
+                margin: 10px auto;
+            }
+
+            @media (min-width: 1440px) {
+                margin: 30px 10px;
+            }
+
+            &-image {
+                height: 220px;
+            }
+
+            &-description {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

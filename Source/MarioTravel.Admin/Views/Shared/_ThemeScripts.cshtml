@@ -1,0 +1,11 @@
+﻿<environment include="Development">
+    <!-- Beautify scripts outside development environment -->
+    <script type="text/javascript" src="~/js/app/app.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="~/js/custom/custom.js" asp-append-version="true"></script>
+</environment>
+
+<environment exclude="Development">
+    <!-- Minify scripts outside development environment -->
+    <script type="text/javascript" src="~/js/app/app.min.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="~/js/custom/custom.min.js" asp-append-version="true"></script>
+</environment>

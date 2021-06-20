@@ -1,0 +1,68 @@
+﻿@using Microsoft.Extensions.Options
+@model MeetingPointViewModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IOptions<MarioTravel.Core.Configuration.Api.Keys.GoogleMaps> GoogleMaps
+@inject IViewLocalizer Localizer
+<div class="page-meeting-point">
+    <div class="page-header">
+        <div class="container">
+            <h3>@Localizer["MEETING POINT"].Value.ToUpper()</h3>
+        </div>
+    </div>
+    <div class="container-fluid body-container">
+        <div class="meeting-point">
+            <div class="meeting-point-content">
+                <p>
+                    @Localizer[@"The meeting point is <strong>Amerling fountain on Brsalje Square</strong> (<span>Ul. Svetog Đurđa 4, 20000, Dubrovnik</span>), located in front of “Dubravka” restaurant (Ul. Brsalje 1). The Guide will be waiting next to the Amerling fountain with a Targaryan or Dubrovnik Tours flag.<br><br>" +
+                   "If you can't find our guide please come to our office which is located on Pile Squere in front of tourist information center (<span>Ul. Tiha, 20000, Dubrovnik</span>)"]
+                </p>
+
+                <h3 class="meeting-point-image-intro">@Localizer["1. Our guide waiting for Game Of Thrones tour"]</h3>
+                <img class="meeting-point-image" src="/img/meeting-point/game-of-thrones.jpg" />
+
+                <h3 class="meeting-point-image-intro">@Localizer["2.Our guide waiting for not Game Of Thrones tour"]</h3>
+                <img class="meeting-point-image" src="/img/meeting-point/not-game-of-thrones.jpg" />
+
+                <h3 class="meeting-point-image-intro">@Localizer["3.Our office at Pile Squere.<br /> Tiha 2, 20 000 Dubrovnik."]</h3>
+                <img class="meeting-point-image" src="/img/meeting-point/dubrovnik-tours-office.jpg" />
+                <p>
+                    @Localizer["You can also get to “Pile Square” (marked on the <span> CITY TIMETABLE</span> as “Old Town”) by public transport with the following bus lines (and go on foot for there for only a few mins). You can click on the links below to see a detailed timetable of a specific bus line."]
+                </p>
+                <div class="meeting-point-lines">
+                    <div class="meeting-point-lines-block">
+                        <a href="~/img/meeting-point/libertas-bus-schedule/1a.webp" target="_blank" rel="noopener"><p><strong>1a</strong> Mokosica - Old Town</p></a>
+                        <a href="~/img/meeting-point/libertas-bus-schedule/1b.webp" target="_blank" rel="noopener"><p><strong>1b</strong> Mokosica - Old Town</p></a>
+                        <a href="~/img/meeting-point/libertas-bus-schedule/1c.webp" target="_blank" rel="noopener"><p><strong>1c</strong> Mokosica - Old Town</p></a>
+                    </div>
+                    <div class="meeting-point-lines-block">
+                        <a href="~/img/meeting-point/libertas-bus-schedule/2.webp" target="_blank" rel="noopener"><p><strong>2</strong> Gorica - Old Town</p></a>
+                        <a href="~/img/meeting-point/libertas-bus-schedule/2a.webp" target="_blank" rel="noopener"><p><strong>2a</strong> Glavica B.K. - Old Town</p></a>
+                    </div>
+                    <div class="meeting-point-lines-block">
+                        <a href="~/img/meeting-point/libertas-bus-schedule/3.webp" target="_blank" rel="noopener"><p><strong>3</strong> Nuncijata - Old Town</p></a>
+                        <a href="~/img/meeting-point/libertas-bus-schedule/3a.webp" target="_blank" rel="noopener"><p><strong>3a</strong> Nuncijata - Old Town</p></a>
+                    </div>
+                    <div class="meeting-point-lines-block">
+                        <a href="~/img/meeting-point/libertas-bus-schedule/4.webp" target="_blank" rel="noopener"><p><strong>4</strong> Hotel Palace - Old Town</p></a>
+                        <a href="~/img/meeting-point/libertas-bus-schedule/6.webp" target="_blank" rel="noopener"><p><strong>6</strong> Babin Kuk - Old Town</p></a>
+                        <a href="~/img/meeting-point/libertas-bus-schedule/9.webp" target="_blank" rel="noopener"><p><strong>9</strong> Hospital - Old Town</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="meeting-point-map" id="meeting-point-map"></div>
+            <a href="https://www.google.com/maps/dir/Current+Location/42.6419073,18.0360346,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x134c0b124e77ea33:0x2c7a081aa89deb7b!2m2!1d18.1060751!2d42.6418024" target="_blank" rel="noopener">
+                <span class="meeting-point-get-directions-btn">
+                    <img class="meeting-point-get-directions-btn-img" src="/ico/gps.png" alt="GPS Icon" /><span>@Localizer["GET DIRECTIONS"]</span>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+<environment include="Development">
+    <script src="~/js/googleMap/googleMap.js" type="text/javascript"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=@GoogleMaps.Value.ApiKey&callback=initMap'></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/js/googleMap/googleMap.min.js" type="text/javascript"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=@GoogleMaps.Value.ApiKey&callback=initMap'></script>
+</environment>

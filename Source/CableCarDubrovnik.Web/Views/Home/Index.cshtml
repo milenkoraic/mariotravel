@@ -1,0 +1,189 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model IEnumerable<CableCarDubrovnik.Web.Models.Home.TourCollectionByTypeViewModel>
+
+<div class="container-fluid header-image-container"></div>
+<div class="container-fluid">
+    <div class="about">
+        <section class="section-indicator">
+            <div class="about-intro page-section">
+                <div id="1"></div>
+                <h2 class="section-heading mb-4">
+                    <span>@Localizer["Cable Car"]</span>
+                    <span class="text-uppercase small">Dubrovnik</span>
+                </h2>
+                <p>@Localizer["Dubrovnik Cable Car was built in 1969 and was the first and only cable car in the Adriatic. It was enthusiastically used by millions of people from all around the world who wanted to discover beautiful panoramic views of the area."]</p>
+            </div>
+        </section>
+        <section class="section-indicator">
+            <div class="page-section clearfix">
+                <div class="intro">
+                    <div id="2"></div>
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/about-us/about_img1.jpg" alt="Great view of Dubrovnik from Srdj hill" />
+                    <div class="intro-text left-0 text-left bg-faded p-4 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper font-weight-bold">@Localizer["Cable Car"]</span>
+                            <span class="section-heading-lower">@Localizer["History"]</span>
+                        </h2>
+                        <p class="mb-3">
+                            @Localizer["Cable car was destroyed in 1991, during the Homeland war and it was rebuilt in 2010. From a limited capacity of only 15 people cable car has grown to a capacity of 32 passengers.Since it became one of the biggest atractions in Dubrovnik it's price constantly grew. From 75kn for a two way ticket for an adult (13+ years) up to 170kn. That is the price today for a ride that lasts less then 4 minutes one way. But you get an incredable overview of the area. On a clear day you can see up to 60 km (37 miles)."]
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-section clearfix">
+                <div class="intro">
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/about-us/about_img2.jpg" alt="Imperial Fortress near city of Dubrovnik" />
+                    <div class="intro-text left-0 text-left bg-faded p-4 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper font-weight-bold">@Localizer["Cable Car"]</span>
+                            <span class="section-heading-lower">@Localizer["History"]</span>
+                        </h2>
+                        <p class="mb-3">
+                            @Localizer["For this reason the neighbouring Imperial Fortress was strategically built on this privileged spot, back in the early 19th century. Fortunately for us it is well built eveng in today's terms so it served as a last point of defense in the '90. war."]
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-indicator">
+            <div class="price-table">
+                <div class="price-table-frame">
+                    <div id="3"></div>
+                    <img class="price-table-img" src="img/price-table/cable-car.jpg" alt="Cable car dubrovnik transporting tourists" />
+                    <h4 class="price-table-heading">@Localizer["Cable Car Tickets"].Value.ToUpper()</h4>
+                    <div class="price-table-tickets-alert">@Localizer["The most convinient way of buying tickets is directly at the cable car station. That way you can decide is the line worth waiting for, and buying a ticket in advance doesn't give you an option of skipping the line. Some days the waiting time is over 45 minutes on the sun. Payments can be made in Croatian kuna and by credit cards."]</div>
+                    <table class="table-borderless price-table-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">@Localizer["TICKET"]</th>
+                                <th scope="col">@Localizer["PRICE"]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Localizer["Adult round trip"]</td>
+                                <td>170.00 HRK</td>
+                            </tr>
+                            <tr>
+                                <td>@Localizer["Adult one-way trip"]</td>
+                                <td>90.00 HRK</td>
+                            </tr>
+                            <tr>
+                                <td>@Localizer["Children one-way trip <br> (4 - 12 years)"]</td>
+                                <td>40.00 HRK</td>
+                            </tr>
+                            <tr>
+                                <td>@Localizer["Children round-trip <br> (4 - 12 years)"]</td>
+                                <td>60.00 HRK</td>
+                            </tr>
+                            <tr>
+                                <td>@Localizer["Children Less than 4 years old"]</td>
+                                <td><b>@Localizer["FREE"]</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="section-indicator">
+            <div id="4"></div>
+            <div class="page-section clearfix">
+                <div class="intro">
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="/tour-images/tour_48_image_1.jpg" alt="Beautifull view of Dubrovnik from Srdj hill">
+                    <div class="intro-text left-0 text-left bg-faded p-4 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper font-weight-bold">@Localizer["Panoramic drive"]</span><br />
+                            <span class="section-heading-lower font-weight-normal" style="font-size:18px;margin-bottom:20px;">&#x2609;&nbsp;@Localizer["ONE OF THE STOPS"]&nbsp;</span>
+                            <span class="section-heading-lower">@Localizer["PANORAMIC VIEW FROM THE SR&Dstrok; HILL"]</span>
+                        </h2>
+                        <p class="mb-3">
+                            @Localizer["On your way up to the top you will make an extra stop. At this spot you will be blessed with the perfect angle to make the best photos of the Old City.Also you are about half way between strongholds of defenders and the attackers in the Homeland war. During the entire time of the siege on Dubrovnik in 1991./ 92. this was a place of constant fighting."]
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-section clearfix">
+                <div class="intro">
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="/tour-images/tour_48_image_2.jpg" alt="Bridge of dr.Franjo Tudjman in Dubrovnik" />
+                    <div class="intro-text left-0 text-left bg-faded p-4 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper font-weight-bold">@Localizer["Panoramic drive"]</span><br />
+                            <span class="section-heading-lower font-weight-normal" style="font-size:18px;margin-bottom:20px;">&#x2609;&nbsp;@Localizer["ONE OF THE STOPS"]&nbsp;</span>
+                            <span class="section-heading-lower">@Localizer["The bridge of Dr.Franjo Tuđman"]</span>
+                        </h2>
+                        <p class="mb-3">
+                            @Localizer["Another stop for you is dr.Franja Tuđmana bridge.This is also a newer addition to our beautiful city. It was finished building in 2002.At the time it was the most expensive bridge in Croatia. On top of all that it is a nice spot for you to see the new part of Dubrovnik, the area not visable from the hill."]
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-section clearfix">
+                <div class="intro">
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="/tour-images/tour_48_image_3.jpg" alt="The river Ombla near Dubrovnik. Shortist rever in EU." />
+                    <div class="intro-text left-0 text-left bg-faded p-4 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper font-weight-bold">@Localizer["Panoramic drive"]</span><br />
+                            <span class="section-heading-lower font-weight-normal" style="font-size:18px;margin-bottom:20px;">&#x2609;&nbsp;@Localizer["ONE OF THE STOPS"]&nbsp;</span>
+                            <span class="section-heading-lower">@Localizer["The river \"Ombla\""]</span>
+                        </h2>
+                        <p class="mb-3">
+                            @Localizer["On the other side of the hill you will see the Europe's shortest river. It has a flow of about 35 - 65 meters(115 - 215 feet). Don't underestimate this short beast, it's spring creates a yearly average of about 23 m3 of water per second(over 6000 gallons per second). Through a sistem of underground caves the entire river rushes out from the ground and after the waterfall it is not powerful enough to push the sea away so it becomes a bay."]
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-indicator">
+            <div id="5"></div>
+            <div class="page-section clearfix">
+                <div class="intro">
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="/tour-images/tour_45_image_1.jpg" alt="The main street Stradun in Dubrovnik with lot of toursts walking arround." />
+                    <div class="intro-text left-0 text-left bg-faded p-4 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper font-weight-bold">@Localizer["Walking tour"]</span><br />
+                            <span class="section-heading-lower">@Localizer["The Old City of Dubrovnik"]</span>
+                        </h2>
+                        <p class="mb-3">
+                            @Localizer["The Old City of Dubrovnik is the best preserved old city in the world. As soon as you step inside you will understand that the people who built the place had to have a lot of money just to build it. Meaning that they where an important player on a global scale. Let us represent you their world, their diplomacy, daily life and a constant struggle to maintain the most sacred of all – FREEDOM."]
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-indicator">
+            <div id="6"></div>
+            <div class="page-section">
+                <div class="row text-left">
+
+                    @foreach (var tourCollection in Model)
+                    {
+                        if (tourCollection.Tours.Any())
+                        {
+                            @foreach (var tour in tourCollection.Tours)
+                            {
+                                var tourType = tourCollection.Type.ToLowerInvariant();
+                                <a class="tours-card-link" asp-controller="Tour" asp-action="Index" asp-route-id="@tour.Id" aria-hidden="true">
+                                    <div class="col-lg-3 col-md-6 mb-4">
+                                        <div class="card h-100">
+                                            <img class="card-img-top" src="@Url.Content(tour.MainImage.Url)" alt="@tour.MainImage.AltDescription">
+                                            <div class="card-body">
+                                                <h4 class="card-title">@Localizer[@tour.Title]</h4>
+                                                <h4 class="tours-card-tour-type">@Localizer[@tourCollection.Type]</h4>
+                                                <p class="card-text">@Localizer[@tour.Description]</p>
+                                                <p class="tours-card-tour-duration">@Localizer["Duration"].Value.ToUpper():&nbsp; @tour.DisplayDuration @Localizer["hours"]</p>
+                                            </div>
+                                            <div class="card-footer">
+                                                <a asp-controller="Tour" asp-action="Index" asp-route-id="@tour.Id" aria-hidden="true" class="btn btn-primary">@Localizer["Find Out More!"]</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

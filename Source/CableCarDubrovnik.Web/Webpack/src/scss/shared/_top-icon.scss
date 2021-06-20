@@ -1,0 +1,35 @@
+#go-top-icon {
+    background: $secondary;
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 45px;
+    width: 45px;
+    z-index: 10;
+}
+
+.visible {
+    transition-timing-function: ease-in;
+    animation: top-icon-show 2.0s;
+    animation-fill-mode: forwards;
+    visibility: visible !important;
+}
+
+#arrow-up {
+    height: 100%;
+    width: 100%;
+}
+
+#arrow-up-gold {
+    height: 100%;
+    width: 100%;
+}
+
+.go-top-link {
+    position: absolute;
+    color: $secondary;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}

@@ -1,0 +1,83 @@
+@import '../mixins/flex';
+
+.page-cookies {
+    &-header {
+        background-image: url(#{$imagesCookiesPath}cookie-header.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 250px;
+        margin-bottom: 30px;
+        border-radius: 30px;
+    }
+
+    &-heading {
+        color: $text-gray;
+        margin-bottom: 30px;
+    }
+
+    &-content {
+        max-width: 1170px;
+        width: 100%;
+        margin: 50px auto !important;
+        padding: 0 20px;
+
+        &-block {
+            @media (max-width: 1170px) {
+                overflow-x: scroll;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 50px;
+            }
+
+            h3 {
+                font-size: 18px;
+                line-height: 27px;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+                color: $text-gray;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 21px;
+                color: $text-gray;
+            }
+
+            table {
+                width: 1170px;
+                table-layout: fixed;
+                border-collapse: collapse;
+
+                thead {
+                    border-bottom: 1px solid $secondary;
+
+                    th {
+                        color: $secondary;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 27px;
+                        text-align: left;
+                        padding-bottom: 5px;
+                    }
+                }
+
+                tbody {
+                    tr {
+                        &:not(:last-child) {
+                            border-bottom: 1px solid $border;
+                        }
+
+                        td {
+                            padding: 20px 10px;
+                            font-size: 14px;
+                            line-height: 21px;
+                            color: $text-gray;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

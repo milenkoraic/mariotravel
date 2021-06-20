@@ -1,0 +1,11 @@
+﻿<environment include="Development">
+    <!-- Beautify styles outside development environment -->
+    <link type="text/css" href="~/css/app/app.css" rel="stylesheet" asp-append-version="true">
+    <link type="text/css" href="~/css/custom/custom.css" rel="stylesheet" asp-append-version="true">
+</environment>
+
+<environment exclude="Development">
+    <!-- Minify styles outside development environment -->
+    <link type="text/css" href="~/css/app/app.min.css" rel="stylesheet" asp-append-version="true">
+    <link type="text/css" href="~/css/custom/custom.css" rel="stylesheet" asp-append-version="true">
+</environment>

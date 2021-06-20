@@ -1,0 +1,406 @@
+.page-transfers {
+    width: 100%;
+    padding: 0;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    background-image: linear-gradient( rgba(255, 255, 255, 0.99), rgba(255, 255, 255, 0.1)), url(#{$imageTransfersPath}transfers-bg.jpg);
+    .page-header {
+        background-image: url(#{$imageTransfersPath}transfers-header.jpg);
+        height: 400px;
+        @media (max-width: 991px) {
+            height: 300px;
+        }
+    }
+
+    &-airport {
+        font-family: 'Poppins';
+        font-display: swap;
+        display: block; 
+        height: auto;
+        text-align: center;
+        color: $text-gray;
+        padding-top: 30px;
+        @media (max-width: 768px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        &-intro {
+            width: 100%;
+            font-weight: 600;
+            text-align: center;
+            padding-left: 120px;
+            padding-right: 120px;
+            color: $secondary;
+
+            @media (max-width: 768px) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        &-image{
+            position: relative;
+            text-align: center;
+            height: 200px;
+            width: 200px;
+            border-radius: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+          
+            .dubrovnik-airport-image {
+                background-image: url(#{$imageTransfersPath}dubrovnik-airport.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .split-airport-image {
+                background-image: url(#{$imageTransfersPath}split-airport.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: none;
+            }
+            .tivat-airport-image {
+                background-image: url(#{$imageTransfersPath}tivat-airport.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: none;
+            }
+        }
+
+        &-select-label {
+            font-weight: 600;
+            font-size: 16px !important;
+            margin-top: 20px;
+            display: block;
+        }
+
+        &-select {
+            width: 200px;
+            text-align: center;
+            font-size: 14px;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            background: $white;
+            border: 1px solid $border;
+            color: $secondary;
+            margin-bottom: 30px;
+            -webkit-box-shadow: 0px 0px 6px -2px rgba(24, 104, 179, 0.75);
+            -moz-box-shadow: 0px 0px 6px -2px rgba(24, 104, 179, 0.75);
+            box-shadow: 0px 0px 6px -2px rgba(24, 104, 179, 0.75);
+        }
+
+        &-price-label {
+            display: block;
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        &-price {
+            font-size: 22px;
+            display: inline-block;
+            border: none;
+            padding: 10px;
+            color: $secondary;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            &:focus {
+                outline: none;
+            }
+        }
+        &-booking-btn {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+
+//-----------------------------------------------------------------------------
+
+    .page-transfers-calculation {
+        font-family: 'Poppins';
+        font-display: swap;
+        display: block; 
+        height: auto;
+        text-align: center;
+        color: $text-gray;
+        margin-top: 100px;
+        @media (max-width: 768px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        &-intro{
+            width: 100%;
+            font-weight: 600;
+            text-align: center;
+            padding-left: 120px;
+            padding-right: 120px;
+            color: $secondary;
+            @media (max-width: 768px) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        &-form {
+            font-family: 'Poppins';
+            font-display: swap;
+            padding-top: 50px;
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            width: 50%;
+            margin: 25%;
+            margin-top: 25px;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            text-align: center !important;
+            @media (max-width: 967px) {
+                width: 100%;
+                margin: 0 !important;
+            }
+            .input-label {
+                color: $secondary;
+                font-size: 18px !important;
+                font-weight:400 !important;
+            }
+
+            .input {
+                text-align: center;
+                background: $white;
+                width: 80%;
+                margin-left: 10%;
+                font-size: 18px;
+                color: $text-gray;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-radius: 0;
+                border: 1px solid $border;
+                border-radius: 15px;
+                margin-top: 10px;
+                margin-bottom: 50px;
+                font-weight: 300;
+                &:focus::placeholder {
+                    color: transparent;
+                }
+                @media (max-width: 468px) {
+                    width: 100%;
+                    margin-left: 0;
+                }
+            }
+            .new-calculation{
+                display: none;
+                background-color: $white;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                .new-calculation-btn{
+                    margin-top: 140px;
+                }
+            }
+            .errorMessage {
+                height: 100%;
+                width: 100%;
+                position: fixed;
+                overflow: auto;
+                top: 70px;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: 100;
+                padding-top: 150px;
+                padding-left: 20px;
+                padding-right: 20px;
+                background: $white;
+                display: none;
+            }
+            .errorMessageText {
+                color: $text-gray;
+                padding: 10px;
+                z-index: 10;
+                @media (max-width: 768px) {
+                    padding: 0;
+                    margin-left: 0;
+                    width: 100%;
+                }
+            }
+            .closeErrorMessage {
+                margin-top: 40px;
+                position: relative;
+            }   
+        }
+    }
+
+
+    #map {
+        visibility: hidden;
+        height: 350px;
+        width: 60%;
+        @media (max-width: 768px) {
+            width: 90%;
+        }
+    }
+
+
+    .transfer-cards-container{
+    display: none;
+    padding-top: 20px;
+    text-align: center;
+
+        &-notice {
+            width: 100%;
+            display: block;
+            text-align: left;
+            height: auto;
+            padding: 20px;
+            border-radius: 10px;
+            .notice-title {
+                list-style: none;
+                text-decoration: none;
+            }
+            .notice-content{
+                text-align: center;
+                color: $text-gray;
+            }
+        }
+        &-select-label{
+            font-weight: 600;
+            font-size: 16px !important;
+            margin-top: 20px;
+            display: block;
+            color: $text-gray;
+        }
+        &-select{
+            width: 200px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            background: $white;
+            color: $secondary;
+            margin-bottom: 30px;
+            -webkit-box-shadow: 0px 0px 6px -2px rgba(24, 104, 179, 0.75);
+            -moz-box-shadow: 0px 0px 6px -2px rgba(24, 104, 179, 0.75);
+            box-shadow: 0px 0px 6px -2px rgba(24, 104, 179, 0.75);
+        }
+        
+        .transfer-cards{
+            text-align: center;
+            display: inline-flex;
+            @media (max-width:991px) {
+                display: inline-block;
+            }
+
+            // .medium-group-order{
+            //     display: none;
+            // }
+            // .large-group-order{
+            //     display: none;
+            // }
+
+            .card{
+                position: relative;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .card-body{
+                height: auto!important;
+                width: 100% !important;
+                padding: 10px;
+                margin-bottom: 10px;
+                padding-top: 0;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+            }
+            .card-title{
+                color: $white;
+                background: $secondary;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+                width: 100%;
+                padding: 10px;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                font-weight: 600;
+            }
+            .transfer-card-image-container{
+                padding: 10px;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+                height: 80px;
+                width: 80px;
+                border-radius: 80px;
+                margin-bottom: 10px;
+                cursor: pointer;
+                &:hover{
+                    transform: scale(1.1);
+                }
+                .transfer-card-image{
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            .card-description{
+                text-align: center;
+            }
+            .card-label{
+                text-transform: uppercase;
+                font-weight: 600;
+                color: $text-gray;
+            }
+            .card-input{
+                background-color: aliceblue;
+                width: 100%;
+                border: none !important;
+                border-radius: 15px;
+                text-align: center;
+            }
+            .transfer-card-price{
+                color: $secondary;
+            }
+            .card-button{
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+                background-color: $primary;
+                color: $secondary;
+                padding: 10px;
+                display: block;
+                font-weight: 600;
+                width: 100%;
+                border-radius: 0px 0px 5px 5px;
+            }
+        }
+    }
+
+
+    &-form-container {
+        background-color: transparent;
+        display: none;
+        height: auto;
+        width: 100%;
+        position: relative;
+        input:focus, textarea:focus, select:focus{
+            outline: none;
+        }
+        .textarea-label{
+            background: $secondary;
+            color: $white !important;
+            padding: 5px;
+            padding-left: 15px;
+            color: $white;
+            font-weight: 500;
+        }
+        .group-type-text {
+            text-align: left;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: $text-gray;
+            width: 100%;
+        }
+        .submit-request-btn {
+            display: none;
+        }
+    }
+}

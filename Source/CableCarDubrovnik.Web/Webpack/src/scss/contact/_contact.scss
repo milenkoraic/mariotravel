@@ -1,0 +1,70 @@
+.contact-us {
+    width: 100%;
+    @media (max-width: 991px) {
+        width: 100%;
+    }
+    &-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 350px;
+        margin-top: 65px;
+        @media (max-width: 991px) {
+            margin-top: 65px;
+        }
+    }
+    &-form-container {
+        margin-top: 50px;
+    }
+    &-form {
+        border-radius: 5px;
+        width: 50%;
+        @media (max-width: 992px) {
+            width: 100%;
+        }
+        @include flex(space-betweeen, flex-end, row, wrap);
+        .form-group {
+            width: 100%;
+            margin-bottom: 20px;
+            .form-control {
+                border-bottom: 1px solid $border;
+                font-size: 14px;
+                border: 1px solid $border;
+                &:hover,
+                &:focus {
+                    border-bottom-color: $primary;
+                    outline: none;
+                }
+            }
+            select {
+                background-color: $white !important;
+            }
+            input:focus::placeholder {
+                color: transparent;
+            }
+            textarea {
+                max-height: 405px;
+            }
+        }
+        .form-group-half {
+            @media (min-width: 992px) {
+                width: 60%;
+            }
+            margin-bottom: 0;
+        }
+        .input-validation-error {
+            border: 1px solid rgb(224, 138, 88) !important;
+            background: rgb(235, 224, 215) !important;
+        }
+        .error-container {
+            width: 100%;
+            text-align: left;
+        }
+        .error {
+            color: rgb(206, 89, 36);
+        }
+        .success {
+            color: green;
+        }
+    }
+}

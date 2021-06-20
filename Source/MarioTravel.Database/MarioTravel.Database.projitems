@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>48533450-d149-40b1-b76f-8dde6b14c78b</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>MarioTravel.Database</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\00_create_application.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\01_create_tour_type.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\02_create_tour_language.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\03_create_tour.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\04_create_tour_image.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\10_create_transfer_time .sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\14_create_payment.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\05_create_tour_time.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\06_create_tour_booking.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\08_create_transfer.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\09_create_transfer_booking.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\13_create_transfer_calculation.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\07_create_tour_time_nesting.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\11_create_transfer_airport.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\ChangeScripts\20191115\12_create_transfer_destination.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\MarioTravel\CreateDatabase.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Initialization\run-sql-scripts.sh" />
+  </ItemGroup>
+</Project>

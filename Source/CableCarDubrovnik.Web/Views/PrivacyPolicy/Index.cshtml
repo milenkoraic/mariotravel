@@ -1,0 +1,52 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+<div class="page-policy">
+    <div class="page-header">
+        <div class="container">
+            <h3>@Localizer["Privacy Policy"]</h3>
+        </div>
+    </div>
+    <div class="policy-container">
+        <div class="policy-content">
+            <h4 class="policy-subs"><b>@Localizer["1. Protecting data"]</b></h4>
+            @Localizer["Mario Travel d.o.o.  pay special attention to protect your personal informations."]
+
+            <br /><br />
+            <h4 class="policy-subs"><b>@Localizer["2. Collecting data"]</b></h4>
+            @Localizer[@"We never collect or process personal data unless if they are explicitly offered to us by our customers when
+            they are booking tours so personal data is needed to provide services which we are offering on this website."]
+            <br /><br />
+            <h4 class="policy-subs"><b>@Localizer["3. Using data"]</b></h4>
+            @Localizer[@"Mario Travel d.o.o. will use some personal informations for the purposes of technical web site management,
+            analysis and delivery of general and individualized offers,
+            with the aim to provide the best services."]
+            <br /><br />
+            <h4 class="policy-subs"><b>@Localizer["4. Personal data"]</b></h4>
+            @Localizer[@"Personal data is considered to be the information that can identify users, such as name, gender, address, e-mail or postal address.
+            Mario Travel d.o.o.does not collect personal informations except when they are explicitly offered by our customers when thay are subscribing to our newsletter etc."]
+            <br /><br />
+            <h4 class="policy-subs"><b>@Localizer["5. Cookies"]</b></h4>
+            @Localizer[@"We use cookie technology to provide our online services, analyze content usage, offer advertising solutions,
+            and other functionalities that we could not provide you without cookies.
+            For a detailed list of our cookies,
+            check
+            <a href=\""cookies\"">here.</a>"]
+            <br /><br />
+            <h4 class="policy-subs"><b>@Localizer["6. Cookies - Maintenance"]</b></h4>
+            @Localizer[@"Data stored using cookies on this website does not
+            contain personal details from which the user's identity can be identified.
+            You can withdraw cookies on our releases whenever you want.
+            You can delete or block cookies through your web browser or using specialized software for it."]
+            <br /><br />
+            <h4 class="policy-subs"><b>@Localizer["7. Cookies - Important"]</b></h4>
+            @Localizer[@"Please note that disabling all cookies can cause problems with user experiance on the website.
+            Some data, such as the type of browser you are using, the number of visits,
+            the average time spent on pages, the viewed content is used to improve the functionality of our site."]
+            <br /><br />
+            <h4 class="policy-subs"><b>@Localizer["5. Cookies - Agreement"]</b></h4>
+            @Localizer[@"The user decides which information he / she makes available. In the event of any changes to your personal informations please notify
+            us at the following e - mail address: privatetours@gmail.com to correct or update your personal
+            informations."]
+        </div>
+    </div>
+</div>

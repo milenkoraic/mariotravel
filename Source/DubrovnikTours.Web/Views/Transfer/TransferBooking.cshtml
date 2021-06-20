@@ -1,0 +1,364 @@
+﻿@using Microsoft.Extensions.Options
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model DubrovnikTours.Web.Models.Transfer.TransferViewModel
+@inject IOptions<MarioTravel.Core.Configuration.Api.Keys.GoogleMaps> GoogleMaps
+
+<div class="page page-transfers">
+    <div class="page-header">
+        <div class="container">
+            <h3 id="service-type">@Localizer["Transfer"].Value.ToUpper()</h3>
+        </div>
+    </div>
+    <div class="container development-container">
+        <p class="text-info">Application ID:</p>
+        <input id="application-id" value="@Model.ApplicationId" class="form-control" />
+        <p class="text-info">Service Name:</p>
+        <input id="service-name" value="@Model.Title" class="form-control" />
+        <p class="text-info">Transfer Type:</p>
+        <input id="transfer-type" class="form-control" />
+        <p class="text-info">Small Price:</p>
+        <input id="small-price" class="form-control" />
+        <p class="text-info">Medium Price:</p>
+        <input id="medium-price" class="form-control" />
+        <p class="text-info">Total Price:</p>
+        <input id="total-price" class="form-control" />
+    </div>
+    <div class="container">
+        <div class="page-transfers-airport">
+            <h2 class="page-transfers-airport-intro">@Localizer["AIRPORT TRANSFER"]</h2>
+            <p>@Localizer["You are arriving or leaving the city and you need fast airport service? </br> We have best service for you. </br> Few easy steps and you are all set!"]</p><br />
+            <form onsubmit="return false" id="calculate-airport-price" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="text-align:center;">
+                <div id="airport-circle-cards" class="page-transfers-airport-image">
+                    <div id="dubrovnik-airport" class="page-transfers-airport-image dubrovnik-airport-image">
+                    </div>
+
+                    <div id="split-airport" class="page-transfers-airport-image split-airport-image">
+                    </div>
+
+                    <div id="tivat-airport" class="page-transfers-airport-image tivat-airport-image">
+                    </div>
+                </div>
+
+                <label class="page-transfers-airport-select-label">@Localizer["SELECT AN AIRPORT"]</label>
+                <select asp-items="@Model.AirportBookingModel.AirportSelectList" class="form-airport-selector page-transfers-airport-select"> </select>
+
+                <label class="page-transfers-airport-select-label">@Localizer["SELECT NUMBER OF PERSONS"]</label>
+                <select class="form-number-selector page-transfers-airport-select">
+                    <option value="4" selected>@Localizer["1 - 4 PERSONS"]</option>
+                    <option value="8">@Localizer["5 - 8 PERSONS"]</option>
+                    <option value="1000">@Localizer["9 + PERSONS"]</option>
+                </select>
+
+                <label class="page-transfers-airport-select-label">@Localizer["TRANSFER DIRECTION"]</label>
+                <select class="form-direction-selector page-transfers-airport-select">
+                    <option selected>@Localizer["TO THE AIRPORT"]</option>
+                    <option>@Localizer["FROM THE AIRPORT"]</option>
+                </select>
+
+                <div id="start-label" class="page-transfers-airport-select-label">@Localizer["FROM LOCATION"]</div>
+                <div id="end-label" class="page-transfers-airport-select-label" style="display:none;">@Localizer["TO LOCATION"]</div>
+
+                <select asp-items="@Model.AirportBookingModel.DestinationSelectList" class="form-location-selector page-transfers-airport-select"></select>
+
+                <div id="booking-container" class="container page-transfers-airport-booking-price-container">
+                    <label id="airport-price-label" class="page-transfers-airport-price-label">@Localizer["TRANSFER PRICE"]</label>
+                    <input id="airport-service-price" class="page-transfers-airport-price" readonly /><br />
+                    <button id="airport-service-btn" class="btn btn-primary page-transfers-airport-booking-btn">@Localizer["BOOK NOW"]</button><br />
+                </div>
+            </form>
+        </div>
+
+        <div class="container text-center page-transfers-calculation">
+            <h2 class="page-transfers-calculation-intro">@Localizer["ANY DESTINATION"]</h2>
+            <p>@Localizer["From Dubrovnik to anywhere around 1000 km and opposite. </br> Go where ever you want with our transfer calculator without any hidden costs! </br> Easy calculation, easy booking, easy life! </br> We are expecting you!"]</p><br />
+            <div class="page-transfers-calculator-container">
+                <form onsubmit="return false" id="calculate-distance" class="page-transfers-calculation-form" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                    <div class="form-group">
+                        <label class="input-label">@Localizer["STARTING POSITION"]</label>
+                        <input name="from-position" placeholder="@Localizer["Insert starting position"] . . ." id="from-input" class="form-control input" type="text" />
+                    </div>
+                    <div class="form-group">
+                        <label class="input-label">@Localizer["FINAL DESTINATION"]</label>
+                        <input name="to-position" placeholder="@Localizer["Insert final destination"] . . ." id="to-input" class="form-control input" type="text" />
+                    </div>
+                    <div class="container new-calculation">
+                        <button id="reset-map-calculation-btn" class="btn btn-primary new-calculation-btn">@Localizer["NEW CALCULATION"]</button>
+                    </div>
+                    <div class="error"></div>
+                    <div class="success"></div>
+                    <div id="errorMessage" class="errorMessage">
+                        <div id="errorMessageText" class="errorMessageText">
+                            <h1 id="errorHeader"></h1>
+                            <p id="errorContent"></p>
+                            <button class="btn btn-primary closeErrorMessage" id="closeErrorMessage">@Localizer["CLOSE"]</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="map" class="container"></div>
+        <div id="transfer-cards" class="transfer-cards-container">
+            <div class="transfer-cards cards">
+                <div class="small-group-order">
+                    <div class="card">
+                        <p class="card-title">@Localizer["SMALL GROUP TRANSFER </br> (1-4 PERSONS)"]</p>
+                        <div class="card-body">
+                            <div class="card-description">
+                                <h5 class="card-label">@Localizer["STARTING LOCATION"]</h5>
+                                <textarea rows="2" style="resize:none;" class="location-a card-input" readonly></textarea>
+                                <h5 class="card-label">@Localizer["FINAL DESTINATION"]</h5>
+                                <textarea rows="2" style="resize:none;" class="location-b card-input" readonly></textarea>
+                                <h5 class="card-label">@Localizer["Distance"]</h5>
+                                <input type="hidden" class="distance card-input" readonly />
+                                <input class="user-distance card-input" readonly />
+                                <h5 class="card-label">@Localizer["Duration"]</h5>
+                                <input class="duration card-input" readonly />
+                                <h3 id="small-transfer-card-price" class="transfer-card-price card-input"></h3>
+                            </div>
+                        </div>
+                        <div id="book-small-group" class="card-button">
+                            <div class="container transfer-card-image-container">
+                                <img class="transfer-card-image" src="~/ico/suv.png" />
+                            </div>
+                            <p>@Localizer["BOOK NOW"]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="medium-group-order">
+                    <div class="card">
+                        <p class="card-title">@Localizer["MEDIUM GROUP TRANSFER </br> (5-9 PERSONS)"]</p>
+                        <div class="card-body">
+                            <div class="card-description">
+                                <h5 class="card-label">@Localizer["STARTING LOCATION"]</h5>
+                                <textarea rows="2" style="resize:none;" class="location-a card-input" readonly></textarea>
+                                <h5 class="card-label">@Localizer["FINAL DESTINATION"]</h5>
+                                <textarea rows="2" style="resize:none;" class="location-b card-input" readonly></textarea>
+                                <h5 class="card-label">@Localizer["Distance"]</h5>
+                                <input type="hidden" class="distance card-input" readonly />
+                                <input class="user-distance card-input" readonly />
+                                <h5 class="card-label">@Localizer["Duration"]</h5>
+                                <input class="duration card-input" readonly />
+                                <h3 id="medium-transfer-card-price" class="transfer-card-price card-input"></h3>
+                            </div>
+                        </div>
+                        <div id="book-medium-group" class="card-button">
+                            <div class="container transfer-card-image-container">
+                                <img class="transfer-card-image" src="~/ico/van.png" />
+                            </div>
+                            <p>@Localizer["BOOK NOW"]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="large-group-order">
+                    <div class="card">
+                        <p class="card-title">@Localizer["LARGE GROUP TRANSFER </br> (9+ PERSONS)"]</p>
+                        <div class="card-body">
+                            <div class="card-description">
+                                <h5 class="card-label">@Localizer["STARTING LOCATION"]</h5>
+                                <textarea rows="2" style="resize:none;" class="location-a card-input" readonly></textarea>
+                                <h5 class="card-label">@Localizer["FINAL DESTINATION"]</h5>
+                                <textarea rows="2" style="resize:none;" class="location-b card-input" readonly></textarea>
+                                <h5 class="card-label">@Localizer["Distance"]</h5>
+                                <input type="hidden" class="distance card-input" readonly />
+                                <input class="user-distance card-input" readonly />
+                                <h5 class="card-label">@Localizer["Duration"]</h5>
+                                <input class="duration card-input" readonly />
+                                <h3 id="large-transfer-price" class="transfer-card-price card-input">@Localizer["On request"].Value.ToUpper()</h3>
+                            </div>
+                        </div>
+                        <div id="book-large-group" class="card-button">
+                            <div class="container transfer-card-image-container">
+                                <img class="transfer-card-image" src="~/ico/bus.png" />
+                            </div>
+                            <p>@Localizer["SEND REQUEST"]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div id="notice-to-customers" class="transfer-cards-container-notice container">
+                    <h4 class="notice-title text-center text-danger">@Localizer["IMPORTANT NOTICE"]</h4>
+                    <p id="border-crossing" class="notice-content"></p>
+                    <p class="notice-content">@Localizer["The route provided through google maps does not necessarily have to correspond to the route to be traveled (Reason: closed roads, road works, traffic jams etc.)"]</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-transfers-calculations-container">
+            <div class="page-transfers-form-container container">
+                <form id="booking" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="tour-info-form" style="background-color:transparent;">
+                    <h4 id="reservation-text" class="group-type-text"></h4>
+                    <input type="hidden" id="transfer-id" asp-for="@Model.Id" class="form-control" />
+                    <input type="hidden" asp-for="@Model.BookingModel.TransferDistance" id="transfer-distance" class="form-control" />
+                    <input  type="hidden" asp-for="@Model.BookingModel.TransferDuration" id="transfer-duration" class="form-control" />
+                    <div class="form-group">
+                        <label id="from-label-info" class="textarea-label">&#10095; @Localizer["STARTING LOCATION"]</label>
+                        <textarea asp-for="@Model.BookingModel.FromLocation" style="resize:none;" id="location-a" class="form-control textarea-info" readonly></textarea><br />
+                    </div>
+                    <div class="form-group">
+                        <label id="to-label-info" class="textarea-label">&#10095; @Localizer["FINAL DESTINATION"]</label>
+                        <textarea asp-for="@Model.BookingModel.ToLocation" style="resize:none;" id="location-b" class="form-control textarea-info" readonly></textarea><br />
+                    </div>
+                    <div class="form-group">
+                        <label id="price-info" class="textarea-label">&#10095; @Localizer["TRANSFER PRICE"]</label>
+                        <textarea id="transfer-price" style="resize:none;" class="form-control textarea-info" readonly></textarea><br />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.Date">@Localizer["Date"]</label>
+                        <input asp-for="@Model.BookingModel.Date" class="tour-datepicker form-control" id="date" readonly placeholder="@Localizer["Select departure date"]..." />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.Time">@Localizer["Time"]</label>
+                        <select asp-for="@Model.BookingModel.Time" id="time" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.NumberOfPeople">@Localizer["Number of persons"]</label>
+                        <input asp-for="@Model.BookingModel.NumberOfPeople" min="1" max="4" id="number-of-people" type="number" class="form-control" placeholder="Enter number of people" value="1" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.FullName">@Localizer["Full name"] *</label>
+                        <input asp-for="@Model.BookingModel.FullName" id="full-name" class="form-control" placeholder="@Localizer["Enter your full name"]..." />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.Phone">@Localizer["Phone"] *</label>
+                        <input asp-for="@Model.BookingModel.Phone" id="phone" class="form-control" placeholder="@Localizer["Enter your phone number"]..." />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.Email">@Localizer["E-mail"] *</label>
+                        <input asp-for="@Model.BookingModel.Email" id="email" class="form-control" placeholder="@Localizer["Enter your e-mail"]..." />
+                    </div><br />
+                    <div class="form-group form-group-half">
+                        <label asp-for="@Model.BookingModel.AdditionalInfo">@Localizer["Additional info (optional)"]</label>
+                        <textarea asp-for="@Model.BookingModel.AdditionalInfo" id="additional-info" class="form-control" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                    <div class="form-group">
+                        <button id="submit-form" class="btn btn-primary" href="javascript:void(0)" type="button">@Localizer["BOOK NOW"]</button>
+                        <button id="submit-form-request" class="btn btn-primary submit-request-btn" href="javascript:void(0)" type="button">@Localizer["SEND REQUEST"]</button>
+                    </div>
+                    <div class="error" asp-validation-summary="All"></div>
+                    <div class="success"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal payment-method-modal">
+    <div class="modal-window small">
+        <div class="modal-window-close">
+            <img src="~/ico/close.svg" alt="close-btn" />
+        </div>
+        <div class="modal-window-body">
+            <h3>@Localizer["CHOOSE YOUR PAYMENT METHOD"]</h3>
+            <strong>@Localizer["TRANSFER"]</strong>
+            <p>
+                @Localizer["You can choose to make the full payment immediately"]
+                <text> (5% @Localizer["discount!"]) </text>
+                @Localizer["or make a 20% deposit and pay the rest on site(full price)."]
+            </p>
+            <div class="modal-window-divider"></div>
+            <span>@Localizer["There will be no refunds for the deposit you give now."]</span>
+            <div id="payment-buttons" class="payment-method-modal-buttons">
+
+                <button id="btn-checkout-deposit" class="btn btn-ghost-primary btn-checkout"
+                        data-callback-url="@Model.PaymentCallbackEndpoint"
+                        data-language="@Model.PaymentLanguage">
+                    @Localizer["DEPOSIT"]
+                </button>
+
+                <button id="btn-checkout-full" class="btn btn-primary btn-checkout"
+                        data-callback-url="@Model.PaymentCallbackEndpoint"
+                        data-language="@Model.PaymentLanguage">
+                    @Localizer["FULL PAYMENT"]
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal payment-failed-modal">
+    <div class="modal-window container-fluid small">
+        <div class="modal-window-close"><img src="~/ico/close.svg" alt="close-btn" /></div>
+        <div class="modal-window-body">
+            <img src="~/ico/fail.svg" alt="fail-btn" />
+            <h3>@Localizer["BOOKING FAILED!"]</h3>
+            <strong>@Localizer["TRANSFER"]</strong>
+            <p>
+                @Localizer["Something went wrong with your booking process. Please check your payment method then try again."]
+            </p>
+            <div class="modal-window-divider"></div>
+            <span>
+                @Localizer["If payments doesn’t seem to work, kindly "] <a href="contact.html">@Localizer["Contact us"]</a>@Localizer[" to try and resolve this issue if it’s on our end."]
+            </span>
+            <div class="payment-method-modal-buttons">
+                <button id="cancel-on-failed" class="btn btn-ghost-primary">@Localizer["CANCEL"]</button>
+                <button id="book-again-on-failed" class="btn btn-primary">@Localizer["BOOK AGAIN"]</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal payment-successful-modal">
+    <div class="modal-window container-fluid small">
+        <div class="modal-window-close"><img src="~/ico/close.svg" alt="close-btn" /></div>
+        <div class="modal-window-body">
+            <img src="~/ico/success.svg" alt="sucess-btn" />
+            <h3>@Localizer["YOU'RE BOOKED"]</h3>
+            <strong>TRANSFER</strong>
+            <p>
+                @Localizer["Thank you for booking our tour!"]
+            </p>
+            <div class="modal-window-divider"></div>
+            <span>
+                @Localizer["If you don’t receive a confirmation e-mail, please check your spam folder first or "]
+                <a href="contact.html">@Localizer["Contact us"]</a>@Localizer[" for further assistance."]
+            </span>
+            <div class="payment-successful-modal-button">
+                <button id="booking-done" class="btn btn-primary">@Localizer["DONE"]</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script src="@Model.PaymentEndpoint"></script>
+    <script>
+    (function(global) {
+        var yearlyVacations = {
+            @{
+                foreach (var yearlyVacation in Model.Vacations)
+                {
+                    @: @yearlyVacation.Key: [
+                    foreach (var vacation in yearlyVacation.Value)
+                    {
+                        @: {
+                            @: start: new Date(@vacation.Start.Year, @(vacation.Start.Month - 1), @vacation.Start.Day, @vacation.Start.Hour, @vacation.Start.Minute, @vacation.Start.Second).getTime(),
+                            @: end: new Date(@vacation.End.Year, @(vacation.End.Month - 1), @vacation.End.Day, @vacation.End.Hour, @vacation.End.Minute, @vacation.End.Second).getTime()
+                        @: },
+                    }
+                    @: ],
+                }
+            }
+        };
+
+        var inactiveDuringVacation = @(Model.InactiveDuringVacation ? "true" : "false");
+        global.createDatePicker('.tour-datepicker', inactiveDuringVacation, yearlyVacations);
+    })(window);
+    </script>
+}
+
+<environment include="Development">
+    <script src="~/js/transfers/transfers.js" type="text/javascript"></script>
+    <script src="~/js/bookingTimes/bookingTimes.js" type="text/javascript"></script>
+    <script src="~/js/transfersAirportService/transfersAirportService.js" type="text/javascript"></script>
+    <script src="~/js/transfersMapService/transfersMapService.js" type="text/javascript"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=@GoogleMaps.Value.ApiKey&amp;libraries=places&amp;callback=initMap&amp;language=hr'></script>
+</environment>
+
+<environment exclude="Development">
+    <script src="~/js/transfers/transfers.min.js" type="text/javascript"></script>
+    <script src="~/js/bookingTimes/bookingTimes.min.js" type="text/javascript"></script>
+    <script src="~/js/transfersAirportService/transfersAirportService.min.js" type="text/javascript"></script>
+    <script src="~/js/transfersMapService/transfersMapService.min.js" type="text/javascript"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=@GoogleMaps.Value.ApiKey&amp;libraries=places&amp;callback=initMap&amp;language=hr'></script>
+</environment>

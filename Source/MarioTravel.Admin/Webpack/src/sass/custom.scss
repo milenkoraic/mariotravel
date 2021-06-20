@@ -1,0 +1,287 @@
+//CUSTOM STYLES
+@import './custom/colors';
+.btn-clear{
+    border: 1px solid white !important;
+    :hover{
+        outline: none !important;
+    }
+    :focus{
+        outline:none !important;
+    }
+
+}
+//-----------------------------------
+// HEADER STYLING
+//-----------------------------------
+#header{
+    .header{
+    background: url('/img/theme/header-bg.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 350px;
+    @media screen and (max-width: 992px) {
+        background: url('/img/theme/header-bg-sm.jpg') no-repeat; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+    }
+}
+//-----------------------------------
+// END OF HEADER STYLING
+//-----------------------------------
+
+
+//-----------------------------------
+// DASHBOARD STYLING
+//-----------------------------------
+.dashboard{
+    .statistics-category{
+        margin: 20px;
+        color: $gray-font;
+        text-transform: capitalize;
+    }
+    .card{
+        border: 1px solid $gray-border;
+        margin-bottom: 10px;
+        height: 170px;
+    }
+    //MONTHLY STATISTICS
+    .month-stats{
+        margin-bottom: 50px;
+    }
+
+    //YEARLY STATISTICS
+    .year-stats{
+        margin-bottom: 50px;
+    }
+    .col-auto{
+        margin-top: 30px;
+        transform: scale(1.6) !important;
+    }
+}
+.dashboard-separator{
+    margin-top: 95px;
+    width: 100%;
+    padding-top: 25px;
+    margin-bottom: 25px;
+    h1{
+        color: $gray-font;
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+    &-title{
+        position: absolute;
+        top: 300px;
+        left: 0;
+        width: 100%;
+        font-size: 28px !important;
+        background-color: $secondary-white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: 'Pacifico', cursive;
+        color: $primary-violet !important;
+        font-weight: 500;
+        //text-transform: uppercase;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $gray-border;
+    }
+}
+//-----------------------------------
+// END OF DASHBOARD STYLING
+//-----------------------------------
+
+
+//-----------------------------------
+// NAVIGATION BARS STYLING
+//-----------------------------------
+#sidenav-collapse-main{
+  margin: 0;
+  width: 100%;
+}
+
+#sidenav-main{
+    position: fixed !important;
+    margin-top: -1px !important;
+    width: 100% !important;
+    -webkit-box-shadow: 1px 1px 3px -2px rgba(0,0,0,0.75) !important;
+    -moz-box-shadow: 1px 1px 3px -2px rgba(0,0,0,0.75) !important;
+    box-shadow: 1px 1px 3px -2px rgba(0,0,0,0.75) !important;
+}
+
+.nav-link-text{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-nav{
+    &-menu-link-box{
+        margin-bottom: -10px;
+    }
+    &-menu-link{
+        font-family: Arial, Helvetica, sans-serif;
+        color: $gray-font;
+        font-weight: 300;
+        letter-spacing: 1px;
+        font-size: 12px;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 0px;
+    height: 10px;
+    cursor: pointer;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: $secondary-white;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: lightgray; 
+}
+
+.navbar-top{
+    background-color: $primary-violet !important;
+    border-bottom: 2px solid $primary-violet;
+    opacity: 0.95;
+    @media screen and (max-width: 992px) {
+        display: none;
+      }
+}
+
+.dropdown-selected{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown-menu{
+    top:70px;
+    right: -10px;
+    margin: 0;
+    border-radius: 0 !important;
+    &-logout-btn{
+        &:hover{
+            outline: none !important;
+        }
+        &:focus{
+            outline: none !important;
+        }
+    }
+}
+
+//-----------------------------------
+// END OF NAVIGATION BARS STYLING
+//-----------------------------------
+
+
+
+//------------------------------------
+// TOUR VIEW STYLING
+//------------------------------------
+.tour{
+    .row{
+        margin-top: 10px;
+    }
+
+    .card{
+        position: relative;
+        height: 380px;
+        border: 1px solid $gray-border;
+        margin-bottom: 20px;
+    }
+    .card-body{
+        margin: 0;
+        padding: 0;
+    }
+    .card-img{
+        height: 170px !important;
+    }
+    .card-title{
+        padding: 5px;
+    }
+    .card-footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: $tour-card-footer-bg;
+        border-top: 1px solid $gray-border;
+    }
+}
+//-----------------------------
+// END OF TOUR VIEW STYLING
+//-----------------------------
+
+
+//-----------------------------
+// TRANSFER VIEW STYLING
+//-----------------------------
+.transfer{
+    .row{
+        margin-top: 10px;
+    }
+
+    .card{
+        position: relative;
+        height: 700px;
+        border: 1px solid $gray-border;
+        margin-bottom: 20px;
+    }
+    .card-body{
+        margin: 0;
+        padding: 0;
+    }
+    .card-img{
+        height: auto !important;
+        width: 100%;
+    }
+    .card-title{
+        padding: 5px;
+    }
+    input{
+        text-align: center;
+    }
+    .card-footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: $tour-card-footer-bg;
+        border-top: 1px solid $gray-border;
+    }
+}
+//-----------------------------
+// END OF TRANSFER VIEW STYLING
+//-----------------------------
+
+
+//-----------------------------
+// LINKS VIEW STYLING
+//-----------------------------
+.links{
+    margin-top: 50px;
+    .box-part{
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid $gray-border;
+    }
+    .card-img{
+        margin-bottom: 20px;
+        height:64px;
+        width:64px;
+    }
+}
+.link-category{
+    font-weight: 100;
+    color: $gray-font;
+}
+//-----------------------------
+// END OF LINKS VIEW STYLING
+//-----------------------------

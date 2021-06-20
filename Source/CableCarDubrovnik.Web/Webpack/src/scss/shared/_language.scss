@@ -1,0 +1,90 @@
+.header-language {
+    cursor: pointer;
+    display: inline-flex;
+    position: relative;
+    margin-top: 7px;
+
+    @media (max-width: 991px) {
+        text-align: right;
+        right: 0;
+    }
+
+    &--icon {
+        margin-right: 5px;
+    }
+
+    &-name {
+        display: inline-block;
+        color: $white;
+        font-size: 18px;
+        font-weight: 500;
+        margin-right: 10px;
+        color: $white;
+
+        @media (max-width: 991px) {
+            margin-top: 3px;
+        }
+    }
+
+    &-chevron {
+        transition: all 0.3s ease-in-out;
+
+        &.is-active {
+            transform: rotateZ(180deg);
+        }
+    }
+
+    &-pickers {
+        display: none;
+        position: absolute;
+        width: 120px;
+        bottom: -25px;
+        right: -19px;
+        z-index: 6;
+        padding: 5px;
+        border-radius: 5px;
+        transform: translateY(100%);
+
+        @media (max-width: 991px) {
+            position: fixed;
+            bottom: 140px;
+            left: 0;
+        }
+    }
+
+    &-pickers-picker {
+        color: $white;
+        background-color: $primary;
+        text-align: center;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 5px;
+        transition: all 0.2s ease-in-out;
+        border-radius: 5px;
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+
+        &.is-active,
+        &:hover {
+            text-decoration: none;
+            background: $secondary;
+            color: $white;
+        }
+    }
+}
+
+.faq-visible {
+    transition-timing-function: ease-in;
+    animation: faq-show 2.0s;
+    animation-fill-mode: forwards;
+    visibility: visible !important;
+}
+
+.faq-invisible {
+    transition-timing-function: ease-in;
+    animation: faq-hide 2.0s;
+    animation-fill-mode: forwards;
+    visibility: hidden !important;
+}

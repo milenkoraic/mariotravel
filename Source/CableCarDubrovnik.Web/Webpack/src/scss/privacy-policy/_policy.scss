@@ -1,0 +1,33 @@
+.policy-header-text {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.policy-container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border: 1px solid $border;
+    padding-bottom: 30px;
+}
+
+.policy-subs {
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: uppercase;
+    color: $secondary;
+}
+
+a {
+    text-decoration: none;
+    color: $primary;
+}
+
+.policy-content {
+    padding: 20px;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 21px;
+    color: $text-gray;
+}

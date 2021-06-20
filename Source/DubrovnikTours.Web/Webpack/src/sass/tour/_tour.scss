@@ -1,0 +1,401 @@
+@import '../mixins/flex';
+
+.page-tour {
+    .page-header {
+        background-image: url(#{$imageTransfersPath}transfers-header.jpg);
+        height: 400px;
+
+        @media (max-width: 991px) {
+            height: 300px;
+        }
+    }
+}
+
+.tour-info {
+    background: $white;
+    max-width: 1340px;
+    width: 98%;
+    margin: 0 auto;
+    padding: 30px 20px 80px 30px;
+    @include flex(flex-start, space-betweeen, column);
+
+    @media (max-width: 992px) {
+        padding: 0;
+    }
+
+    @media (min-width: 992px) {
+        @include flex(space-between, flex-start, row);
+    }
+
+    @media (min-width: 1024px) {
+        margin-bottom: 20px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    #tour-fix {
+        position: absolute;
+        text-align: center;
+        height: auto;
+        width: 100%;
+        z-index: 11;
+        background: $white;
+
+        @media (max-width: 991px) {
+            height: auto;
+        }
+    }
+
+    .tour-info-gallery {
+        visibility: hidden;
+    }
+    .btn-back{
+        z-index: 10;
+        height: 64px;
+        width: 64px;
+    }
+
+    &-cards{
+        border-radius: 10px;
+    }
+
+    &-card-discount {
+        position: absolute;
+        top: -30px;
+        right: 15px;
+        width: 55px;
+        height: 95px;
+        @include flex(center, center, column);
+        background: url(#{$appIconsPath}discount-box.svg);
+
+        span,
+        strong {
+            color: $white;
+        }
+
+        span {
+            font-size: 18px;
+        }
+
+        strong {
+            font-size: 24px;
+        }
+
+        @media (max-width: 991px) {
+            top: -22px;
+        }
+    }
+
+    &-text {
+        padding: 0 10px;
+        display: none;
+
+        @media (min-width: 992px) {
+            padding: 0 45px 0 30px;
+            width: 40%;
+            padding: 0;
+        }
+
+        &-top {
+            position: relative;
+            padding-top: 0;
+
+            &-back {
+                a {
+                    @include flex(flex-start, center);
+                    display: inline-flex;
+                    font-size: 20px;
+                    font-weight: 500;
+                    text-decoration: none;
+                    color: $secondary;
+
+                    &:hover {
+                        text-decoration: none;
+
+                        svg {
+                            circle {
+                                fill: $secondary;
+                            }
+
+                            path {
+                                stroke: $white;
+                            }
+                        }
+                    }
+
+                    svg {
+                        margin-right: 15px;
+                        transition: all 0.2s ease-in-out;
+
+                        circle,
+                        path {
+                            transition: all 0.2s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-infos {
+            #tour-title {
+                font-weight: 600;
+            }
+
+            h3 {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 30px;
+                color: $text-gray;
+                text-transform: uppercase;
+            }
+
+            &-list {
+                margin: 0px 0 40px 0;
+                padding: 0;
+
+                &-item {
+                    list-style-type: none;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 22px;
+                    color: $text-gray;
+                    background: $white;
+
+                    strong {
+                        text-transform: uppercase;
+                    }
+
+                    &:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        &-content {
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 22px;
+            color: $text-gray;
+            height: 300px;
+
+            @media (min-width: 992px) {
+                height: auto;
+            }
+        }
+
+        &-footer {
+            margin-top: 60px;
+            font-size: 14px;
+            color: $text-gray;
+
+            &-block {
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    &-booking {
+        @media (min-width: 992px) {
+            width: 60%;
+        }
+    }
+
+    &-gallery {
+        max-width: 720px;
+        width: 95%;
+        margin: 80px auto 30px auto;
+
+        .lslide {
+            width: 720px;
+            height: auto;
+
+            img {
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .lSPager {
+            li {
+                border: 1px solid transparent;
+
+                &.active {
+                    border: 2px solid $secondary;
+                }
+            }
+        }
+    }
+
+    &-form {
+        background: $white;
+        border-radius: 5px;
+        padding: 20px 25px;
+        margin: 30px 0 0 0;
+
+        @media (min-width: 992px) {
+            margin: 30px 5px 0 10px;
+        }
+
+        @media (min-width: 1200px) {
+            padding: 35px 10px;
+        }
+
+        @include flex(space-betweeen, flex-end, row, wrap);
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 20px;
+            touch-action: manipulation;
+
+            @media (min-width: 992px) {
+                width: 48%;
+                margin: 10px 1%;
+            }
+
+            @media (min-width: 1200px) {
+                width: 31%;
+                margin: 10px 1%;
+            }
+
+            .form-control {
+                width: 100%;
+                border-bottom: 1px solid $border;
+                font-size: 14px;
+                padding: 5px;
+                color: $text-gray;
+
+                &:hover,
+                &:focus {
+                    border-bottom-color: $secondary;
+                    outline: none;
+                }
+            }
+
+            #date {
+                background-color: $white;
+            }
+
+            label {
+                font-weight: 400;
+            }
+
+            select {
+                background-color: $white !important;
+            }
+
+            input:focus::placeholder {
+                color: transparent;
+            }
+
+            textarea {
+                max-height: 405px;
+                resize: vertical;
+            }
+        }
+
+        .form-group-half {
+            @media (min-width: 992px) {
+                width: 60%;
+            }
+
+            margin-bottom: 0;
+        }
+
+        .input-validation-error {
+            border: 1px solid rgb(228, 143, 143);
+            background: rgb(235, 215, 215);
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+    }
+}
+
+.payment-method-modal,
+.payment-successful-modal,
+.payment-failed-modal {
+    text-align: center;
+    display: none;
+
+    h3 {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        color: $text-gray;
+        margin-bottom: 10px;
+    }
+
+    strong {
+        display: block;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        color: $secondary;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 21px;
+        color: $text-gray;
+    }
+
+    a {
+        color: $secondary;
+    }
+
+    span {
+        display: block;
+        font-size: 14px;
+        line-height: 21px;
+        color: #a5a5a5;
+    }
+}
+
+.payment-method-modal,
+.payment-failed-modal {
+    &-buttons {
+        margin-top: 35px;
+
+        button {
+            width: 45%;
+            padding-left: 0;
+            padding-right: 0;
+
+            &:not(:last-child) {
+                margin-right: 5%;
+            }
+        }
+    }
+}
+
+.payment-successful-modal {
+    &-button {
+        margin-top: 35px;
+        @include flex(center, center);
+    }
+}
+
+.payment-successful-modal,
+.payment-failed-modal {
+    img {
+        margin-bottom: 35px;
+    }
+}
+
+.comma-target-box {
+    margin-top: 20px;
+    display: block;
+}
+
+#go-back {
+    cursor: pointer;
+}

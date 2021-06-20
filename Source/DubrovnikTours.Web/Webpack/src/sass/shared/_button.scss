@@ -1,0 +1,52 @@
+.btn {
+    padding: 12px 32px !important;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    text-transform: uppercase !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin: 10px;
+    margin-left: 0;
+
+    &-ghost {
+        background: transparent;
+        color: $white !important;
+        border-color: $white !important;
+
+        &:hover {
+            background: $secondaryHover !important;
+            color: $secondary;
+            border: 1px solid $secondaryHover !important;
+        }
+    }
+
+    &-ghost-primary {
+        background: $white !important;
+        color: $secondary !important;
+        -webkit-box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.75);
+
+        &:hover {
+            background: $secondaryHover !important;
+            color: $white;
+            border: 1px solid $secondaryHover !important;
+        }
+    }
+
+    &-primary {
+        background: $secondary !important;
+        color: $white !important;
+        text-align: center !important;
+        border: none !important;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25) !important;
+
+        &:hover {
+            background: $secondaryHover !important;
+            color: $white;
+        }
+    }
+}

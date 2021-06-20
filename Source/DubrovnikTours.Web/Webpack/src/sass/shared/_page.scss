@@ -1,0 +1,53 @@
+@import '../mixins/flex';
+.page {
+    &-header {
+        height: 80px;
+        position: relative;
+        padding: 10px 0;
+        @include flex(flex-start, flex-end);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        &:before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.25;
+        }
+        @media (min-width: 580px) {
+            height: 150px;
+            padding: 25px 0;
+        }
+        @media (min-width: 768px) {
+            height: 250px;
+            padding: 45px 0;
+        }
+        h3 {
+            font-size: 26px;
+            line-height: 39px;
+            color: $white;
+            font-weight: 600;
+            text-transform: uppercase;
+            @media (min-width: 580px) {
+                font-size: 30px;
+            }
+            @media (min-width: 768px) {
+                font-size: 36px;
+            }
+        }
+        .container {
+            text-align: center;
+            z-index: 5;
+            @media (min-width: 991px) {
+                padding: 0 120px !important;
+            }
+            @media (max-width: 766px) {
+                text-align: left;
+                padding-left: 20px;
+            }
+        }
+    }
+}

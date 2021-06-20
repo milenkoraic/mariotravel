@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="1 day" xml:space="preserve">
+    <value>1 día</value>
+  </data>
+  <data name="1 year" xml:space="preserve">
+    <value>1 año</value>
+  </data>
+  <data name="3 months" xml:space="preserve">
+    <value>3 meses</value>
+  </data>
+  <data name="As is common practice with almost all professional websites this site uses cookies, which are tiny files that&#xD;&#xA;                are downloaded to your computer, to improve your experience.This page describes what information they gather,&#xD;&#xA;                how we use it and why we sometimes need to store these cookies.We will also share how you can prevent these&#xD;&#xA;                cookies from being stored however this may downgrade or ‘break’ certain elements of the sites functionality." xml:space="preserve">
+    <value>Como es práctica común en casi todos los sitios web profesionales, este sitio utiliza cookies, que son pequeños archivos que se descargan en su computadora para mejorar su experiencia. Esta página describe qué información recopilan,
+cómo lo usamos y por qué a veces necesitamos almacenar estas cookies. También compartiremos cómo puede evitarlas. las cookies se almacenan, sin embargo, esto puede degradar o "romper" ciertos elementos de la funcionalidad del sitio.</value>
+  </data>
+  <data name="Cookie Name/Key" xml:space="preserve">
+    <value>Nombre / clave de cookie</value>
+  </data>
+  <data name="Cookie used in Universal Analytics to be able to store user journey." xml:space="preserve">
+    <value>Cookie utilizada en Universal Analytics para poder almacenar el recorrido del usuario.</value>
+  </data>
+  <data name="Cookie used in Universal Analytics to store visitor identification." xml:space="preserve">
+    <value>Cookie utilizada en Universal Analytics para almacenar la identificación del visitante.</value>
+  </data>
+  <data name="COOKIES" xml:space="preserve">
+    <value>COOKIES </value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="DETAILED LIST OF COOKIES THAT WE USE" xml:space="preserve">
+    <value>LISTA DETALLADA DE COOKIES QUE UTILIZAMOS</value>
+  </data>
+  <data name="DISABLING COOKIES" xml:space="preserve">
+    <value>DESACTIVAR LAS COOKIES</value>
+  </data>
+  <data name="Domain" xml:space="preserve">
+    <value>Dominio</value>
+  </data>
+  <data name="Duration/Expires" xml:space="preserve">
+    <value>Duración / Caduca</value>
+  </data>
+  <data name="End of session" xml:space="preserve">
+    <value>Fin de sesión</value>
+  </data>
+  <data name="FACEBOOK PIXEL" xml:space="preserve">
+    <value>FACEBOOK PIXEL</value>
+  </data>
+  <data name="First-party / Essential" xml:space="preserve">
+    <value>PrimeraParte / Esencial</value>
+  </data>
+  <data name="FirstParty / Analytics" xml:space="preserve">
+    <value>PrimeraParte / Analytics</value>
+  </data>
+  <data name="Google advertising cookie used for user tracking and ad targeting purposes." xml:space="preserve">
+    <value>Cookie publicitaria de Google utilizada para fines de seguimiento de usuarios y orientación de anuncios.</value>
+  </data>
+  <data name="GOOGLE ANALYTICS" xml:space="preserve">
+    <value>GOOGLE ANALITICO</value>
+  </data>
+  <data name="Hopefully that has clarified things for you and as was previously mentioned if there is something that you&#xD;&#xA;                aren’t sure whether you need or not it’s usually safer to leave cookies enabled in case it does interact with&#xD;&#xA;                one of the features you use on our site.However if you are still looking for more information then you can&#xD;&#xA;                contact us through our contact page." xml:space="preserve">
+    <value>Esperemos que eso haya aclarado las cosas para usted y, como se mencionó anteriormente, si hay algo que usted no estoy seguro de si necesita o no, por lo general, es más seguro dejar las cookies habilitadas en caso de que interactúe con una de las funciones que utiliza en nuestro sitio. Sin embargo, si todavía está buscando más información, puede contáctenos a través de nuestra página de contacto.</value>
+  </data>
+  <data name="HOW WE USE COOKIES" xml:space="preserve">
+    <value>CÓMO UTILIZAMOS LAS COOKIES</value>
+  </data>
+  <data name="In some cases along with necessary cookies we also use cookies provided by trusted third parties. The&#xD;&#xA;                following section details which third party cookies you might encounter through this site." xml:space="preserve">
+    <value>En algunos casos, junto con las cookies necesarias, también utilizamos cookies proporcionadas por terceros de confianza. los
+                 La siguiente sección detalla qué cookies de terceros puede encontrar a través de este sitio.</value>
+  </data>
+  <data name="Magento cookie, which stores frontend form key for form validations." xml:space="preserve">
+    <value>Cookie de Magento, que almacena la clave de formulario de la interfaz para las validaciones de formularios.</value>
+  </data>
+  <data name="MORE INFORMATION" xml:space="preserve">
+    <value>MÁS INFORMACIÓN</value>
+  </data>
+  <data name="Stores the user's cookie consent state for the current domain." xml:space="preserve">
+    <value>Almacena el estado de consentimiento de cookies del usuario para el dominio actual.</value>
+  </data>
+  <data name="THE COOKIES WE SET" xml:space="preserve">
+    <value>LAS COOKIES QUE PONEMOS</value>
+  </data>
+  <data name="This site uses Google Analytics which is one of the most widespread and trusted analytics solution on the web&#xD;&#xA;                for helping us to understand how you use the site and ways that we can improve your experience.These cookies&#xD;&#xA;                may track things such as how long you spend on the site and the pages that you visit so we can continue to&#xD;&#xA;                produce engaging content.For more information on Google Analytics cookies, see the official Google Analytics&#xD;&#xA;                page." xml:space="preserve">
+    <value>Este sitio utiliza Google Analytics, que es una de las soluciones de análisis más extendidas y confiables en la web por ayudarnos a comprender cómo usa el sitio y las formas en que podemos mejorar su experiencia. Estas cookies puede rastrear cosas como cuánto tiempo pasa en el sitio y las páginas que visita para que podamos continuar producir contenido atractivo. Para obtener más información sobre las cookies de GoogleAnalytics, consulte el sitio oficial de Google Analytics página.</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="Used by Facebook to deliver a series of advertisement products such as real time bidding from third&#xD;&#xA;                            party advertisers." xml:space="preserve">
+    <value>Utilizado por Facebook para entregar una serie de productos publicitarios, como ofertas en tiempo real de terceros anunciantes de fiestas.</value>
+  </data>
+  <data name="We also use Facebook Pixel on this site. This cookie is placed by Facebook. It enables Dubrovnik Tours to&#xD;&#xA;                measure, optimize and build audiences for advertising campaigns served on Facebook.In particular it enables&#xD;&#xA;                Dubrovnik Tours to see how our users move between devices when accessing the Dubrovnik Tours web site and&#xD;&#xA;                Facebook, to ensure that Dubrovnik Tours Facebook advertising is seen by our users most likely to be&#xD;&#xA;                interested in such advertising by analysing which content a user has viewed and interacted with on the&#xD;&#xA;                Dubrovnik Tours web site." xml:space="preserve">
+    <value>También usamos Facebook Pixel en este sitio. Esta cookie es colocada por Facebook. Permite a Dubrovnik Tours
+ mide, optimiza y crea audiencias para campañas publicitarias publicadas en Facebook, en particular permite Dubrovnik Tours para ver cómo nuestros usuarios se mueven entre dispositivos al acceder al sitio web de Dubrovnik Tours y Facebook, para garantizar que la publicidad de Dubrovnik Tours en Facebook sea vista por nuestros usuarios con mayor probabilidad de ser interesado en dicha publicidad analizando qué contenido ha visto e interactuado un usuario en el Sitio web de Dubrovnik Tours.</value>
+  </data>
+  <data name="We use cookies for a variety of reasons detailed below. Unfortunately in most cases there are no industry&#xD;&#xA;                standard options for disabling cookies without completely disabling the functionality and features they add to&#xD;&#xA;                this site.It is recommended that you leave on all cookies if you are not sure whether you need them or not in&#xD;&#xA;                case they are used to provide a service that you use." xml:space="preserve">
+    <value>Utilizamos cookies por una variedad de razones detalladas a continuación. Desafortunadamente en la mayoría de los casos no hay industria opciones estándar para deshabilitar las cookies sin deshabilitar por completo la funcionalidad y las funciones que agregan a este sitio Se recomienda que deje todas las cookies si no está seguro de si las necesita o no en en caso de que se usen para proporcionar un servicio que usted usa.</value>
+  </data>
+  <data name="WHAT ARE COOKIES?" xml:space="preserve">
+    <value>¿Qué son las cookies?</value>
+  </data>
+  <data name="You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for&#xD;&#xA;                how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites&#xD;&#xA;                that you visit.Disabling cookies will usually result in also disabling certain functionality and features of&#xD;&#xA;                the this site.Therefore it is recommended that you do not disable cookies." xml:space="preserve">
+    <value>Puede evitar la configuración de cookies ajustando la configuración de su navegador (consulte la Ayuda de su navegador para como hacer esto). Tenga en cuenta que deshabilitar las cookies afectará la funcionalidad de este y muchos otros sitios web  que visita. La desactivación de las cookies generalmente también inhabilitará ciertas funciones y características de este sitio. Por lo tanto, se recomienda que no desactive las cookies.</value>
+  </data>
+</root>

@@ -1,0 +1,272 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model CableCarDubrovnik.Web.Models.Tour.TourViewModel
+
+<div class="tour">
+    <p id="tourType" style="display:none;">@Model.Id</p>
+    <section class="jumbotron-fluid tour-header">
+        @foreach (var image in Model?.Images)
+        {
+            <img class="tour-header-img" src="@Url.Content(image.Url)" alt="@Url.Content(image?.AltDescription)" />
+        }
+    </section>
+    <div class="jumbotron-fluid tour-content-wrapper">
+        <div class="tour-content">
+            <div class="tour-back-btn">
+                <a id="go-back">
+                    <img src="/ico/back-icon.png" alt="Go Back Icon" />
+                </a>
+            </div>
+            <p class="tour-back-btn-text">@Localizer["BACK"]</p>
+            <div class="tour-title">
+                <h3>@Localizer[@Model.Title]</h3>
+                <input type="hidden" id="tour-id" value="@Model.Id" class="form-control" />
+                <input type="hidden" id="time-nesting" value="@Model.TimeNesting" />
+            </div>
+
+            <div class="tour-info">
+                <ul class="tour-info-list">
+                    <li class="tour-info-list-item">
+                        <img class="tour-info-list-item-img" src="/ico/departure-icon.png" alt="Departure Icon" />
+                        <strong>@Localizer["DEPARTURE"]:</strong>
+                        @if (!string.IsNullOrEmpty(Model.DisplayDepartureTimes) && @Model.DisplayDepartureTimes.Length == 149)
+                        {
+                            @Localizer["On request"]
+                        }
+
+                        else if (!string.IsNullOrEmpty(Model.DisplayDepartureTimes) && @Model.DisplayDepartureTimes.Length <= 149 || @Model.DisplayDepartureTimes.Length >= 149)
+                        {
+                            @Model.DisplayDepartureTimes
+                        }
+
+                        else
+                        {
+                            @Localizer["On request"]
+                        }
+                    </li>
+                    <li class="tour-info-list-item">
+                        <img class="tour-info-list-item-img" src="/ico/price-icon.png" alt="Price Icon" />
+                        <strong>@Localizer["PRICES"]:</strong>
+                    </li>
+                    <li class="tour-info-list-item">
+                        @Localizer[@Model.DisplayPrice]
+                    </li>
+                    <li class="tour-info-list-item">
+                        @Localizer[@Model.DisplayChildPrice] (4 - 12)
+                    </li>
+                    <li class="tour-info-list-item" id="duration">
+                        <img class="tour-info-list-item-img" src="/ico/duration-icon.png" alt="Duration Icon" />
+                        @Localizer["Duration"]:&nbsp;@Localizer[@Model.DisplayDuration] @Localizer["hours"]
+                    </li>
+                    <li class="tour-info-list-item">
+                        <img class="tour-info-list-item-img" src="/ico/free-icon.png" alt="Free Of Charge Icon" />
+                        @Localizer["For children less than 4 years old"]
+                    </li>
+                </ul>
+            </div>
+            <div class="tour-description">
+                @*@Html.Raw(Model.Content)*@
+            </div>
+            <div class="tour-instructions">
+                <img class="tour-info-list-item-img" src="/ico/checked-icon.png" alt="Checked Icon" />
+                @Localizer[Model.IsIncluded]
+                <img class="tour-info-list-item-img" src="/ico/unchecked-icon.png" alt="Unchecked Icon" />
+                @Localizer[Model.NotIncluded]
+            </div>
+            <div class="tour-meeting-point">
+                <img class="tour-info-list-item-img" src="/ico/meeting-point-icon.png" alt="Location Icon" />
+                <strong>@Localizer["MEETING POINT"]:</strong>
+                <p>@Localizer["Pile Square, our office is in front of the Tourist Information Center. Tiha 2, 20 000, Dubrovnik."]</p>
+                <img class="tour-meeting-point-img" src="~/img/meeting-point/not-game-of-thrones.jpg" alt="Dubrovnik Tours Meeting Point On Pile Squere" />
+            </div>
+            <div class="tour-booking">
+                <form id="booking" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="tour-form">
+                    <input type="hidden" id="tour-id" value="@Model.Id" />
+                    <input type="hidden" id="tour-type" value="@Model.Type" />
+                    <input type="hidden" id="tour-title" value="@Model.Title" />
+                    @if (Model.MinutesBeforeDisposed == "0")
+                    {
+                        <input type="hidden" id="minutes-before-disposed" value="60" />
+                    }
+                    else
+                    {
+                        <input type="hidden" id="minutes-before-disposed" value="15" />
+                    }
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.DisplayDate">@Localizer["Date"] *</label>
+                        <input asp-for="@Model.BookingModel.DisplayDate" class="tour-datepicker form-control" id="date" readonly placeholder="@Localizer["Select departure date"]..." />
+                    </div>
+                    <div class="form-group" style="display:none;">
+                        <select id="times-today" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.DisplayTourTime">@Localizer["Time"]</label>
+                        <select asp-for="@Model.BookingModel.DisplayTourTime" id="time" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.FullName">@Localizer["Full name"] *</label>
+                        <input asp-for="@Model.BookingModel.FullName" id="full-name" class="form-control" placeholder="@Localizer["Enter your full name"]..." />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.Phone">@Localizer["Phone"] *</label>
+                        <input asp-for="@Model.BookingModel.Phone" id="phone" class="form-control" placeholder="@Localizer["Enter your phone number"]..." />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.Email">@Localizer["E-mail"] *</label>
+                        <input asp-for="@Model.BookingModel.Email" id="email" class="form-control" placeholder="@Localizer["Enter your e-mail"]..." />
+                    </div>
+
+                    <div class="form-group pickup-included-dropdown">
+                        <label>@Localizer["PICK UP POINT"]</label>
+                        <select id="pick-up-selection" class="form-control">
+                            <option>PILE MEETING POINT</option>
+                            <option>MAIN PORT FOR CRUISE SHIPS</option>
+                            <option>Other location...</option>
+                        </select>
+                    </div>
+                    <div asp-for="@Model.BookingModel.PickUpPoint" class="form-group form-group-half pickup-textarea-container">
+                        <textarea asp-for="@Model.BookingModel.PickUpPoint" id="pick-up-point" class="form-control" placeholder="Enter your pick up point here..." rows="2"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.NumberOfPeople">@Localizer["Number of persons"] *</label>
+                        <input asp-for="@Model.BookingModel.NumberOfPeople" min="1" id="number-of-people" type="number" class="form-control" placeholder="Enter number of people" value="1" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.NumberOfChildren">@Localizer["Childrens (4-12)"]</label>
+                        <input asp-for="@Model.BookingModel.NumberOfChildren" min="0" id="number-of-children" type="number" class="form-control" placeholder="Enter number of children" value="0" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.BookingModel.NumberOfBabies">@Localizer["Babies (0-3)"]</label>
+                        <input asp-for="@Model.BookingModel.NumberOfBabies" min="0" id="number-of-babies" type="number" class="form-control" placeholder="Enter number of babies" value="0" />
+                    </div>
+                    <div class="form-group form-group-half">
+                        <label asp-for="@Model.BookingModel.AdditionalInfo">@Localizer["Additional info (optional)"]</label>
+                        <textarea asp-for="@Model.BookingModel.AdditionalInfo" id="additional-info" class="form-control" rows="5"></textarea>
+                    </div>
+                    <div class="container-fluid btn-container">
+                        <button id="submit-form" class="btn btn-primary" href="javascript:void(0)" type="button">@Localizer["BOOK NOW"]</button>
+                    </div>
+                    <div class="container error-container">
+                        <div class="error" asp-validation-summary="All"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal payment-method-modal">
+        <div class="modal-window small">
+            <div class="modal-window-close"><img src="~/ico/close.svg" alt="close-btn" /></div>
+            <div class="modal-window-body">
+                <h3>@Localizer["CHOOSE YOUR PAYMENT METHOD"]</h3>
+                <strong>@Model.Title</strong>
+                <p>
+                    @Localizer["You can choose to make the full payment immediately"]
+                    @{if (Model.DiscountPercent.HasValue)
+                        { <text > (@Model.DiscountPercent.Value % @Localizer["discount!"]) </text>}
+                    }
+                    @Localizer["or make a 20% deposit and pay the rest on site(full price)."]
+                </p>
+                <div class="modal-window-divider"></div>
+                <span>@Localizer["There will be no refunds for the deposit you give now."]</span>
+                <div id="payment-buttons" class="payment-method-modal-buttons">
+
+                    <button id="btn-checkout-deposit" class="btn btn-ghost-primary btn-checkout"
+                            data-callback-url="@Model.PaymentCallbackEndpoint"
+                            data-language="@Model.PaymentLanguage">
+                        @Localizer["DEPOSIT"]
+                    </button>
+
+                    <button id="btn-checkout-full" class="btn btn-primary btn-checkout"
+                            data-callback-url="@Model.PaymentCallbackEndpoint"
+                            data-language="@Model.PaymentLanguage">
+                        @Localizer["FULL PAYMENT"]
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal payment-failed-modal">
+        <div class="modal-window small">
+            <div class="modal-window-close"><img src="~/ico/close.svg" alt="close-btn" /></div>
+            <div class="modal-window-body">
+                <img src="~/ico/fail.svg" alt="fail-btn" />
+                <h3>@Localizer["BOOKING FAILED!"]</h3>
+                <strong>@Model.Title</strong>
+                <p>
+                    @Localizer["Something went wrong with your booking process. Please check your payment method then try again."]
+                </p>
+                <div class="modal-window-divider"></div>
+                <span>
+                    @Localizer["If payments doesn’t seem to work, kindly "] <a href="contact.html">@Localizer["Contact us"]</a>@Localizer[" to try and resolve this issue if it’s on our end."]
+                </span>
+                <div class="payment-method-modal-buttons">
+                    <button id="cancel-on-failed" class="btn btn-ghost-primary">@Localizer["CANCEL"]</button>
+                    <button id="book-again-on-failed" class="btn btn-primary">@Localizer["BOOK AGAIN"]</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal payment-successful-modal">
+        <div class="modal-window small">
+            <div class="modal-window-close"><img src="~/ico/close.svg" alt="close-btn" /></div>
+            <div class="modal-window-body">
+                <img src="~/ico/success.svg" alt="sucess-btn" />
+                <h3>@Localizer["YOU'RE BOOKED"]</h3>
+                <strong>@Model.Title</strong>
+                <p>
+                    @Localizer["Thank you for booking our tour!"]
+                </p>
+                <div class="modal-window-divider"></div>
+                <span>
+                    @Localizer["If you don’t receive a confirmation e-mail, please check your spam folder first or "]
+                    <a href="contact.html">@Localizer["Contact us"]</a>@Localizer[" for further assistance."]
+                </span>
+                <div class="payment-successful-modal-button">
+                    <button id="booking-done" class="btn btn-primary">@Localizer["DONE"]</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<environment include="Development">
+    <script src="~/js/tour/tour.js" type="text/javascript"></script>
+    <script src="~/js/tourPayment/tourPayment.js" type="text/javascript"></script>
+    <script src="~/js/bookingTimes/bookingTimes.js" type="text/javascript"></script>
+
+</environment>
+<environment exclude="Development">
+    <script src="~/js/tour/tour.min.js" type="text/javascript"></script>
+    <script src="~/js/tourPayment/tourPayment.min.js"></script>
+    <script src="~/js/bookingTimes/bookingTimes.min.js" type="text/javascript"></script>
+</environment>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script src="@Model.PaymentEndpoint"></script>
+    <script>
+    (function(global) {
+                        var yearlyVacations = {
+            @{
+                foreach (var yearlyVacation in Model.Vacations)
+                        {
+                    @: @yearlyVacation.Key: [
+                    foreach (var vacation in yearlyVacation.Value)
+                    {
+                        @: {
+                            @: start: new Date(@vacation.Start.Year, @(vacation.Start.Month - 1), @vacation.Start.Day, @vacation.Start.Hour, @vacation.Start.Minute, @vacation.Start.Second).getTime(),
+                            @: end: new Date(@vacation.End.Year, @(vacation.End.Month - 1), @vacation.End.Day, @vacation.End.Hour, @vacation.End.Minute, @vacation.End.Second).getTime()
+                        @: },
+                    }
+                    @: ],
+                }
+            }
+        };
+
+        var inactiveDuringVacation = @(Model.InactiveDuringVacation ? "true" : "false");
+        global.createDatePicker('.tour-datepicker', inactiveDuringVacation, yearlyVacations);
+    })(window);
+    </script>
+}

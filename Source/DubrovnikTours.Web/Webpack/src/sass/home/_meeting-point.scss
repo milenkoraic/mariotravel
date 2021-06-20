@@ -1,0 +1,113 @@
+@import '../mixins/flex';
+
+.page-meeting-point {
+    width: 100%;
+    height: 100%;
+}
+
+.meeting-point {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    max-width: 1440px;
+    width: 100%;
+    padding: 0 10px;
+
+    &-directions-img {
+        height: 25px;
+        width: 25px;
+        margin-right: 5px;
+        float: left;
+    }
+
+    &-directions-btn {
+        background-color: $secondary;
+        display: inline-block;
+        color: $primary;
+        font-weight: 600;
+        margin: 20px;
+        padding: 10px;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 3;
+
+        @media (max-width: 1180px) {
+            position: relative;
+            margin-top: 35px;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &-content {
+        position: relative;
+        z-index: 2;
+        padding-top: 10px;
+        margin: 0 auto 20px auto;
+        max-width: 900px;
+        width: 100%;
+
+        h3 {
+            margin-bottom: 30px;
+            font-size: 18px;
+            color: $text-gray;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 27px;
+            color: $text-gray;
+
+            span {
+                color: $secondary;
+            }
+
+            margin: 0;
+        }
+    }
+
+    &-lines {
+        margin-top: 30px;
+        @include flex(space-between, flex-start, row, wrap);
+
+        p {
+            border-bottom: 1px solid $secondary;
+            margin-bottom: 20px;
+        }
+    }
+
+    &-map {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 450px;
+        margin-bottom: 10px;
+    }
+
+    &-get-directions-btn-img {
+        display: inline-block;
+        margin-right: 5px;
+        height: 20px;
+        width: 20px;
+    }
+
+    &-get-directions-btn {
+        cursor: pointer;
+        background-color: $secondary;
+        color: $white;
+        font-weight: 600;
+        display: inline-block;
+        width: auto;
+        padding: 10px;
+        margin: 20px;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        display: none;
+
+        @media (max-width: 991px) {
+            display: inline-block;
+        }
+    }
+}

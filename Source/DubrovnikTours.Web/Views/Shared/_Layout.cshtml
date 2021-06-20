@@ -1,0 +1,103 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@using DubrovnikTours.Web.App.Infrastructure.HtmlMetadata
+@inject DubrovnikTours.Web.App.Infrastructure.HtmlMetadata.MetadataContent metadataContent
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1868b3" />
+<title>@(ViewData["Title"] == null ? "Dubrovnik Tours" : $"{@ViewData["Title"]} - Dubrovnik Tours")</title>
+@Html.GenerateMetadataTags(metadataContent)
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="date=no">
+<meta name="format-detection" content="address=no">
+<meta name="format-detection" content="email=no">
+<link rel="shortcut icon" href="~/favicon.png" type="image/x-icon">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+<environment include="Development">
+<link rel="stylesheet" type="text/css" href="~/css/app/app.css" />
+<link rel="stylesheet" type="text/css" href="~/css/vendors/vendors.css" />
+</environment>
+<environment exclude="Development">
+<link rel="stylesheet" type="text/css" href="~/css/app/app.min.css" />
+<link rel="stylesheet" type="text/css" href="~/css/vendors/vendors.min.css" />
+</environment>
+</head>
+<body class="noselect">
+    <div id="top"></div>
+    <header class="header navbar-fixed-top sticky-top">
+        <div class="header-inner">
+            <div class="header-left">
+                <svg class="header-menu-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="5" width="32" height="2" rx="1" fill="#ffffff" />
+                    <rect y="15" width="28" height="2" rx="1" fill="#ffffff" />
+                    <rect y="25" width="32" height="2" rx="1" fill="#ffffff" />
+                    <p class="header-menu-btn"></p>
+                </svg> 
+
+                <a class="header-logo" asp-controller="Home" asp-action="Index"><img class="header-logo-image" src="/brand/icon256x256.png" /><span>Dubrovnik TOURS</span></a>
+            </div>
+            @await Html.PartialAsync("_SelectLanguagePartial")
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                <a is-active-route asp-controller="Home" asp-action="Index" class="header-menu-link">@Localizer["Home"].Value.ToUpper()</a>
+                <a is-active-route asp-controller="ScheduledTours" asp-action="ScheduledToursList" class="header-menu-link">@Localizer["Scheduled Tours"].Value.ToUpper()</a>
+                <a is-active-route asp-controller="PrivateTours" asp-action="PrivateToursList" class="header-menu-link">@Localizer["Private Tours"].Value.ToUpper()</a>
+                <a is-active-route asp-controller="Transfer" asp-action="TransferBooking" class="header-menu-link">@Localizer["Transfers"].Value.ToUpper()</a>
+                <a is-active-route asp-controller="MeetingPoint" asp-action="MeetingInfo" class="header-menu-link">@Localizer["MEETING POINT"].Value.ToUpper()</a>
+                <a is-active-route asp-controller="AboutUs" asp-action="About" class="header-menu-link">@Localizer["About Us"].Value.ToUpper()</a>
+                <a is-active-route asp-controller="ContactUs" asp-action="Contact" class="header-menu-link">@Localizer["Contact us"].Value.ToUpper()</a>
+            </div>
+        </div>
+    </header>
+    <partial name="_CookieConsentPartial" />
+    @RenderBody()
+
+    <footer class="footer">
+        <div class="container-wrapper">
+            <div class="container">
+                <div class="footer-info">
+                    <div class="footer-info-item"><img src="/ico/icon-location.svg" alt="location"> <span>Tiha 2, 20000 Dubrovnik</span></div>
+                    <div class="footer-info-item"><img src="/ico/icon-phone.svg" alt="phone"> <span>+385 98 972 9490 | +385 99 773 0077</span></div>
+                    <div class="footer-info-item"><img src="/ico/icon-email.svg" alt="email"> <span>privatetourdubrovnik@gmail.com</span></div>
+                    <div class="footer-info-item"><img src="/ico/icon-oib.svg" alt="oib"> <span>329 614 52 480</span></div>
+                </div>
+                <div class="footer-social">
+                    <h3>@Localizer["CONNECT WITH US"]</h3>
+                    <div class="footer-social-icons">
+                        <a href="https://www.facebook.com/Dubrovnik-tours-private-and-scheduled-walking-tours-1708210799455608/" class="footer-social-icons-icon" target="_blank" rel="noopener" aria-hidden="true">
+                            <img src="/ico/icon-facebook.svg" alt="Faacebook Icon">
+                        </a>
+                        <a href="" onclick="return" class="footer-social-icons-icon" aria-hidden="true">
+                            <img src="/ico/icon-instagram.svg" alt="Instagram Icon">
+                        </a>
+                        <a href="https://www.tripadvisor.com/Attraction_Review-g295371-d10435358-Reviews-Private_Tours_Dubrovnik-Dubrovnik_Dubrovnik_Neretva_County_Dalmatia.html" class="footer-social-icons-icon" target="_blank" rel="noopener" aria-hidden="true">
+                            <img src="/ico/icon-tripadvisor.svg" alt="Trip Advisor Icon">
+                        </a>
+                    </div>
+                    <div class="copyright">Mario Travel d.o.o. All rights reserved. <br /> Copyright  &#x24B8;&nbsp; 2017-</div>
+                </div>
+            </div>
+        </div>
+        <div id="go-top-icon" style="position: fixed;">
+            <a class="go-top-link" href="#top"><img id="arrow-up" class="images" src="~/img/layout/indicators/top-arrow-indicator-blue.png" alt="go-top-arrow-up-white" aria-hidden="true" />.</a>
+            <a class="go-top-link" href="#top"><img id="arrow-up-gold" class="images" src="~/img/layout/indicators/top-arrow-indicator-white.png" alt="go-top-arrow-up-blue" aria-hidden="true" />.</a>
+        </div>
+    </footer>
+
+    <environment include="Development">
+        <script src="~/js/app/app.js" type="text/javascript"></script>
+        <script src="~/js/vendors/vendors.js" type="text/javascript"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/app/app.min.js" type="text/javascript"></script>
+        <script src="~/js/vendors/vendors.min.js" type="text/javascript"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

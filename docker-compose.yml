@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  web-proxy:
+    container_name: mariotravel-proxy
+    image: nginx:1.13.12
+    volumes:
+      - ./ReverseProxy/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ../mariotravel-certs/mariotravel.tours.crt:/etc/ssl/certs/mariotravel.tours.crt:ro
+      - ../mariotravel-certs/mariotravel.tours.key:/etc/ssl/certs/mariotravel.tours.key:ro
+
+  dubrovniktours.web:
+    container_name: dubrovniktours-web
+    image: milenkoraic/dubrovniktours:3.1.1
+    build:
+      context: .
+      dockerfile: Source/DubrovnikTours.Web/Dockerfile
+
+  cablecardubrovnik.web:
+    container_name: cablecardubrovnik-web
+    image: milenkoraic/cablecardubrovnik:1.0.0
+    build:
+      context: .
+      dockerfile: Source/CableCarDubrovnik.Web/Dockerfile
+
+  mariotravel.admin:
+    container_name: mariotravel-admin
+    image: milenkoraic/mariotraveladmin:1.0.0
+    build:
+      context: .
+      dockerfile: Source/MarioTravel.Admin/Dockerfile

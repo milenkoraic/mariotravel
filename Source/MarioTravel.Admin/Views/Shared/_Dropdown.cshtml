@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+
+<div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+    <div class="dropdown-header">
+        <h5 class="text-overflow m-1">Welcome!</h5>
+    </div>
+    @if (SignInManager.IsSignedIn(User))
+    {
+<a asp-controller="Home" asp-action="Profile" class="dropdown-item">
+    <i class="text-gray ni ni-single-02"></i>
+    <span>My profile</span>
+</a>
+                <a href="#" class="dropdown-item">
+                    <i class="text-gray ni ni-settings-gear-65"></i>
+                    <span>Settings</span>
+                </a>
+                                <div class="dropdown-divider"></div>
+                                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new {area = ""})">
+                                                    <button class="dropdown-item logout dropdown-menu-logout-btn" style="cursor:pointer;">
+                                                        <i class="text-gray ni ni-user-run"></i>
+                                                        <span class="logout">Logout</span>
+                                                    </button>
+                                                </form> }
+                                            else
+                                            {
+                                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Login">
+                                    <i class="ni ni-single-02"></i>
+                                    <span>Login</span>
+                                </a>}
+</div>

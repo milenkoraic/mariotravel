@@ -1,0 +1,49 @@
+@import '../mixins/flex';
+
+.page-about {
+    .page-header {
+        background-image: url(#{$imageAboutUsPath}about-header.jpg);
+        height: 400px;
+
+        @media (max-width: 991px) {
+            height: 300px;
+        }
+    }
+
+    &-content {
+        position: relative;
+        margin: 50px auto !important;
+        padding: 0 20px;
+        @include flex(space-between, flex-start);
+
+        @media (min-width: 768px) {
+            padding: 0 120px !important;
+        }
+
+        @media (min-width: 1100px) {
+            height: 200px;
+            margin: 70px auto 50px auto !important;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 21px;
+            color: $text-gray;
+            max-width: 880px;
+            width: 100%;
+            margin-right: 30px;
+
+            @media (max-width: 1100px) {
+                padding-left: 10px;
+            }
+        }
+
+        &-illustration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transform: translateY(-25%);
+        }
+    }
+}

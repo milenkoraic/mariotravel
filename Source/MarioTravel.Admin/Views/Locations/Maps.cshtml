@@ -1,0 +1,24 @@
+﻿@using MarioTravel.Admin.Infrastructure.AppSettingsModels
+@using Microsoft.Extensions.Options
+
+@inject IOptions<ScriptTags> OptionsScriptTags
+
+@{ ViewData["Title"] = "Maps"; }
+
+@section HeadScripts
+{
+    @* Get the Google Maps API key from the configuration object *@
+    <script src="https://maps.googleapis.com/maps/api/js?key=@OptionsScriptTags.Value?.GoogleMapsApiKey"></script>
+}
+<div class="dashboard-separator">
+    <h1 class="dashboard-separator-title text-center">Office Location</h1>
+    <address class="text-center">Address: Ul. Svetog Đurđa 4, 20000, Dubrovnik</address>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="card shadow">
+            <div id="map-canvas" class="map-canvas" data-lat="42.642223" data-lng="18.1055199" style="height: 600px;padding:10px;"></div>
+        </div>
+    </div>
+</div>

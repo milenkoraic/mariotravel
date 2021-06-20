@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Adult one-way trip" xml:space="preserve">
+    <value>Viaje de ida para adultos</value>
+  </data>
+  <data name="Adult round trip" xml:space="preserve">
+    <value>Adulto ida y vuelta</value>
+  </data>
+  <data name="Another stop for you is dr.Franja Tuđmana bridge.This is also a newer addition to our beautiful city. It was finished building in 2002.At the time it was the most expensive bridge in Croatia. On top of all that it is a nice spot for you to see the new part of Dubrovnik, the area not visable from the hill." xml:space="preserve">
+    <value>Otra parada para usted es el puente Dr. Tu Tumana, también una nueva incorporación a nuestra hermosa ciudad. Fue terminado de construir en 2002. En ese momento era el puente más caro de Croacia. Además de todo eso, es un buen lugar para ver la nueva parte de Dubrovnik, el área no visible desde la colina.</value>
+  </data>
+  <data name="Boletos de teleférico" xml:space="preserve">
+    <value>Boletos de teleférico</value>
+  </data>
+  <data name="Cable Car" xml:space="preserve">
+    <value>El Teleférico</value>
+  </data>
+  <data name="Cable Car Tickets" xml:space="preserve">
+    <value>Boletos de teleférico</value>
+  </data>
+  <data name="Cable car was destroyed in 1991, during the Homeland war and it was rebuilt in 2010. From a limited capacity of only 15 people cable car has grown to a capacity of 32 passengers.Since it became one of the biggest atractions in Dubrovnik it's price constantly grew. From 75kn for a two way ticket for an adult (13+ years) up to 170kn. That is the price today for a ride that lasts less then 4 minutes one way. But you get an incredable overview of the area. On a clear day you can see up to 60 km (37 miles)." xml:space="preserve">
+    <value>El teleférico fue destruido en 1991, durante la guerra de la Patria y fue reconstruido en 2010. De una capacidad limitada de solo 15 personas, el teleférico ha crecido a una capacidad de 32 pasajeros. Desde que se convirtió en una de las mayores atracciones en Dubrovnik, su precio es constante creció Desde 75kn por un boleto de ida para un adulto (13+ años) hasta 170kn. Ese es el precio hoy por un viaje que dura menos de 4 minutos en un sentido. Pero obtienes una visión general ampliable del área. En un día despejado puede ver hasta 60 km (37 millas).</value>
+  </data>
+  <data name="Children Less than 4 years old" xml:space="preserve">
+    <value>Niños menores de 4 años.</value>
+  </data>
+  <data name="Children one-way trip &lt;br&gt; (4 - 12 years)" xml:space="preserve">
+    <value>Viaje de ida para niños &lt;br&gt; (4 - 12 años)</value>
+  </data>
+  <data name="Children round-trip &lt;br&gt; (4 - 12 years)" xml:space="preserve">
+    <value>Niños ida y vuelta &lt;br&gt; (4 - 12 años)</value>
+  </data>
+  <data name="Dubrovnik Cable Car was built in 1969 and was the first and only cable car in the Adriatic. It was enthusiastically used by millions of people from all around the world who wanted to discover beautiful panoramic views of the area." xml:space="preserve">
+    <value>El teleférico de Dubrovnik fue construido en 1969 y fue el primer y único teleférico en el Adriático. Fue utilizado con entusiasmo por millones de personas de todo el mundo que querían descubrir hermosas vistas panorámicas de la zona.</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Duración</value>
+  </data>
+  <data name="Find Out More!" xml:space="preserve">
+    <value>¡Saber más!</value>
+  </data>
+  <data name="For this reason the neighbouring Imperial Fortress was strategically built on this privileged spot, back in the early 19th century. Fortunately for us it is well built eveng in today's terms so it served as a last point of defense in the '90. war." xml:space="preserve">
+    <value>Por esta razón, la Fortaleza Imperial vecina fue construida estratégicamente en este lugar privilegiado, a principios del siglo XIX. Afortunadamente para nosotros, está bien construido en términos actuales, por lo que sirvió como último punto de defensa en los '90. guerra.</value>
+  </data>
+  <data name="FREE" xml:space="preserve">
+    <value>GRATIS</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>Historia</value>
+  </data>
+  <data name="hours" xml:space="preserve">
+    <value>horas</value>
+  </data>
+  <data name="On the other side of the hill you will see the Europe's shortest river. It has a flow of about 35 - 65 meters(115 - 215 feet). Don't underestimate this short beast, it's spring creates a yearly average of about 23 m3 of water per second(over 6000 gallons per second). Through a sistem of underground caves the entire river rushes out from the ground and after the waterfall it is not powerful enough to push the sea away so it becomes a bay." xml:space="preserve">
+    <value>Al otro lado de la colina, verá el río más corto de Europa. Tiene un flujo de aproximadamente 35 - 65 metros (115 - 215 pies). No subestimes a esta pequeña bestia, su primavera crea un promedio anual de aproximadamente 23 m3 de agua por segundo (más de 6000 galones por segundo). A través de un sistema de cuevas subterráneas, todo el río se precipita desde el suelo y después de la cascada no es lo suficientemente poderoso como para alejar el mar, por lo que se convierte en una bahía.</value>
+  </data>
+  <data name="On your way up to the top you will make an extra stop. At this spot you will be blessed with the perfect angle to make the best photos of the Old City.Also you are about half way between strongholds of defenders and the attackers in the Homeland war. During the entire time of the siege on Dubrovnik in 1991./ 92. this was a place of constant fighting." xml:space="preserve">
+    <value>En su camino hacia la cima, hará una parada adicional. En este lugar serás bendecido con el ángulo perfecto para hacer las mejores fotos de la Ciudad Vieja. También estás a medio camino entre las fortalezas de los defensores y los atacantes en la guerra de la Patria. Durante todo el tiempo del asedio a Dubrovnik en 1991./92. Este fue un lugar de lucha constante.</value>
+  </data>
+  <data name="ONE OF THE STOPS" xml:space="preserve">
+    <value>UNO DE LOS PUNTOS DE PARADA DE VIAJE</value>
+  </data>
+  <data name="Panoramic drive" xml:space="preserve">
+    <value>Unidad panorámica</value>
+  </data>
+  <data name="PANORAMIC VIEW FROM THE SR&amp;Dstrok; HILL" xml:space="preserve">
+    <value>VISTA PANORÁMICA DESDE EL SR&amp;Dstrok; COLINA</value>
+  </data>
+  <data name="PRICE" xml:space="preserve">
+    <value>PRECIO</value>
+  </data>
+  <data name="Scheduled" xml:space="preserve">
+    <value>Programado</value>
+  </data>
+  <data name="The most convinient way of buying tickets is directly at the cable car station. That way you can decide is the line worth waiting for, and buying a ticket in advance doesn't give you an option of skipping the line. Some days the waiting time is over 45 minutes on the sun. Payments can be made in Croatian kuna and by credit cards." xml:space="preserve">
+    <value>La forma más conveniente de comprar boletos es directamente en la estación del teleférico. De esa manera, puede decidir cuál es la línea que vale la pena esperar, y comprar un boleto por adelantado no le da la opción de saltarse la línea. Algunos días el tiempo de espera es de más de 45 minutos en el sol. Los pagos pueden hacerse en kuna croata y con tarjetas de crédito.</value>
+  </data>
+  <data name="The Old City of Dubrovnik" xml:space="preserve">
+    <value>La ciudad vieja de Dubrovnik</value>
+  </data>
+  <data name="The Old City of Dubrovnik is the best preserved old city in the world. As soon as you step inside you will understand that the people who built the place had to have a lot of money just to build it." xml:space="preserve">
+    <value>La ciudad vieja de Dubrovnik es la ciudad vieja mejor conservada del mundo. Tan pronto como entre, comprenderá que las personas que construyeron el lugar tenían que tener mucho dinero solo para construirlo.</value>
+  </data>
+  <data name="The Old City of Dubrovnik is the best preserved old city in the world. As soon as you step inside you will understand that the people who built the place had to have a lot of money just to build it. Meaning that they where an important player on a global scale. Let us represent you their world, their diplomacy, daily life and a constant struggle to maintain the most sacred of all – FREEDOM." xml:space="preserve">
+    <value>La ciudad vieja de Dubrovnik es la ciudad vieja mejor conservada del mundo. Tan pronto como entre, comprenderá que las personas que construyeron el lugar tenían que tener mucho dinero solo para construirlo. Lo que significa que eran un jugador importante a escala global. Permítanos representarle su mundo, su diplomacia, su vida diaria y una lucha constante por mantener lo más sagrado de todos: la LIBERTAD.</value>
+  </data>
+  <data name="The river \&quot;Ombla\&quot;&quot;" xml:space="preserve">
+    <value>El rio \ "Ombla \" "</value>
+  </data>
+  <data name="This tour does not use the cable car. Instead you will travel by an airconditioned vehicle to the upper cable car station and Imperial fort and you will enjoy the best panoramic views of the area." xml:space="preserve">
+    <value>Este recorrido no utiliza el teleférico. En su lugar, viajará en un vehículo con aire acondicionado a la estación superior del teleférico y al fuerte Imperial, y disfrutará de las mejores vistas panorámicas de la zona.</value>
+  </data>
+  <data name="TICKET" xml:space="preserve">
+    <value>BOLETO</value>
+  </data>
+  <data name="Walking tour" xml:space="preserve">
+    <value>Tour a pie</value>
+  </data>
+  <data name="Walking Tour + Cable car" xml:space="preserve">
+    <value>Recorrido a pie + El Teleférico</value>
+  </data>
+  <data name="Walking Tour + Panoramic drive" xml:space="preserve">
+    <value>Recorrido a pie + Recorrido panorámico</value>
+  </data>
+</root>

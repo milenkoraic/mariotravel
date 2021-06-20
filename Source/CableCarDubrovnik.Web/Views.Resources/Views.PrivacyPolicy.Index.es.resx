@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="1. Protecting data" xml:space="preserve">
+    <value>1. Protección de datos</value>
+  </data>
+  <data name="2. Collecting data" xml:space="preserve">
+    <value>2. Collecting data</value>
+  </data>
+  <data name="3. Using data" xml:space="preserve">
+    <value>3. Usando datos</value>
+  </data>
+  <data name="4. Personal data" xml:space="preserve">
+    <value>4. Datos personales</value>
+  </data>
+  <data name="5. Cookies - Agreement" xml:space="preserve">
+    <value>5. Cookies - Acuerdo</value>
+  </data>
+  <data name="6. Cookies - Maintenance" xml:space="preserve">
+    <value>6. Cookies - Mantenimiento</value>
+  </data>
+  <data name="7. Cookies - Important" xml:space="preserve">
+    <value>7. Cookies - Importante</value>
+  </data>
+  <data name="Data stored using cookies on this website does not&#xD;&#xA;            contain personal details from which the user's identity can be identified.&#xD;&#xA;            You can withdraw cookies on our releases whenever you want.&#xD;&#xA;            You can delete or block cookies through your web browser or using specialized software for it." xml:space="preserve">
+    <value>Los datos almacenados utilizando cookies en este sitio web no
+             contienen detalles personales a partir de los cuales se puede identificar la identidad del usuario.
+             Puede retirar las cookies en nuestros lanzamientos cuando lo desee.
+             Puede eliminar o bloquear las cookies a través de su navegador web o utilizando un software especializado para ello.</value>
+  </data>
+  <data name="Mario Travel d.o.o.  pay special attention to protect your personal informations." xml:space="preserve">
+    <value>Mario Travel d.o.o. Preste especial atención para proteger su información personal.</value>
+  </data>
+  <data name="Mario Travel d.o.o. will use some personal informations for the purposes of technical web site management,&#xD;&#xA;            analysis and delivery of general and individualized offers,&#xD;&#xA;            with the aim to provide the best services." xml:space="preserve">
+    <value>Mario Travel d.o.o. utilizará alguna información personal para fines de gestión técnica del sitio web,
+             análisis y entrega de ofertas generales e individualizadas,
+             con el objetivo de brindar los mejores servicios.</value>
+  </data>
+  <data name="Personal data is considered to be the information that can identify users, such as name, gender, address, e-mail or postal address.&#xD;&#xA;            Mario Travel d.o.o.does not collect personal informations except when they are explicitly offered by our customers when thay are subscribing to our newsletter etc." xml:space="preserve">
+    <value>Los datos personales se consideran la información que puede identificar a los usuarios, como el nombre, el género, la dirección, el correo electrónico o la dirección postal.
+             Mario Travel d.o.o.no recopila información personal, excepto cuando nuestros clientes la ofrecen explícitamente cuando se suscriben a nuestro boletín, etc.</value>
+  </data>
+  <data name="Please note that disabling all cookies can cause problems with user experiance on the website.&#xD;&#xA;            Some data, such as the type of browser you are using, the number of visits,&#xD;&#xA;            the average time spent on pages, the viewed content is used to improve the functionality of our site." xml:space="preserve">
+    <value>Tenga en cuenta que deshabilitar todas las cookies puede causar problemas con la experiencia del usuario en el sitio web.
+             Algunos datos, como el tipo de navegador que está utilizando, la cantidad de visitas,
+             El tiempo promedio dedicado a las páginas, el contenido visto se utiliza para mejorar la funcionalidad de nuestro sitio.</value>
+  </data>
+  <data name="Privacy Policy" xml:space="preserve">
+    <value>Política de privacidad</value>
+  </data>
+  <data name="The user decides which information he / she makes available. In the event of any changes to your personal informations please notify&#xD;&#xA;            us at the following e - mail address: privatetours@gmail.com to correct or update your personal&#xD;&#xA;            informations." xml:space="preserve">
+    <value>El usuario decide qué información pone a disposición. En caso de cualquier cambio en su información personal, notifíquelo
+             nosotros en la siguiente dirección de correo electrónico: privatetours@gmail.com para corregir o actualizar su personal
+             Informaciones</value>
+  </data>
+  <data name="We never collect or process personal data unless if they are explicitly offered to us by our customers when&#xD;&#xA;            they are booking tours so personal data is needed to provide services which we are offering on this website." xml:space="preserve">
+    <value>Nunca recopilamos ni procesamos datos personales a menos que nuestros clientes nos los ofrezcan explícitamente cuando
+             están reservando tours, por lo que se necesitan datos personales para proporcionar los servicios que ofrecemos en este sitio web.</value>
+  </data>
+  <data name="We use cookie technology to provide our online services, analyze content usage, offer advertising solutions,&#xD;&#xA;            and other functionalities that we could not provide you without cookies.&#xD;&#xA;            For a detailed list of our cookies,&#xD;&#xA;            check&#xD;&#xA;            &lt;a href=\&quot;&quot;cookies\&quot;&quot;&gt;here.&lt;/a&gt;" xml:space="preserve">
+    <value>Utilizamos tecnología de cookies para proporcionar nuestros servicios en línea, analizar el uso del contenido, ofrecer soluciones publicitarias,
+             y otras funcionalidades que no podríamos proporcionarle sin cookies.
+             Para obtener una lista detallada de nuestras cookies,
+             cheque
+             &lt;a href=\""cookies\""&gt; aquí. &lt;/a&gt;</value>
+  </data>
+</root>

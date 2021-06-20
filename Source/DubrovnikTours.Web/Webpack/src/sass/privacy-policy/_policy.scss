@@ -1,0 +1,41 @@
+.page-policy {
+    .page-header {
+        background-image: url(#{$imagePrivacyPolicyPath}/privacy-header.jpg);
+        background-position: center center;
+        height: 550px;
+
+        @media (max-width: 991px) {
+            height: 300px;
+        }
+    }
+}
+
+.policy-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: $white;
+    border: 1px solid $border;
+}
+
+.policy-subs {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: uppercase;
+    color: $text-gray;
+}
+
+a {
+    text-decoration: none;
+    color: $secondary;
+}
+
+.policy-content {
+    padding: 20px;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 21px;
+    color: $text-gray;
+}

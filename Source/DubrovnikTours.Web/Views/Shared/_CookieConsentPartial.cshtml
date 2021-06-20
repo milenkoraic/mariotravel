@@ -1,0 +1,79 @@
+﻿@using Microsoft.AspNetCore.Http.Features
+
+@{
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
+    var showBanner = !consentFeature?.CanTrack ?? false;
+    var cookieString = consentFeature?.CreateConsentCookie();
+}
+
+@if (showBanner)
+{
+    <div id="cookieConsent">
+
+        <!-- CUSTOMIZED MESSAGE IN COOKIE POPUP -->
+        <div class="modal cookie-modal">
+            <div class="modal-window wide">
+                <div class="modal-window-body cookie-modal-basic">
+                    <h3>This website uses cookies</h3>
+                    <p>Cookies are very small data files that are stored on your computer or mobile devices when you visit some websites.This is standard practice for websites.</p>
+                    <p>It is essential we use cookies to deliver a high quality experience and make our website easier for you to use.For example we use cookies to collect statistics on how our website is used and also keep track of your preferences.You can remove cookies already stored on your computer at any time, by removing cookies it may prevent you from having the best experience and using parts of our website.</p>
+                    <div class="cookie-modal-buttons">
+                        <button id="buttonAllCookies" class="btn btn-primary accept-cookies" data-dismiss="alert" data-cookie-string="@cookieString">I ACCEPT ALL COOKIES</button>
+                        <button class="btn btn-ghost-primary cookie-modal-toggle">SET UP PREFERANCES</button>
+                    </div>
+                </div>
+                <div class="modal-window-body cookie-modal-advanced">
+                    <h3>YOUR CHOICE REGARDING COOKIES ON OUR WEBSITE</h3>
+
+                    <div class="cookie-modal-advanced-body">
+                        <div class="cookie-modal-advanced-selectors">
+                            <div class="cookie-modal-advanced-selectors-selector">
+                                <label for="basic-cookies" class="custom-checkbox">
+                                    Essential Cookies
+                                    <input type="checkbox" checked="checked" id="basic-cookies" disabled="disabled">
+                                    <span class="custom-checkbox-box">
+                                        <img src="/ico/icon-check.svg" alt="">
+                                    </span>
+                                </label>
+                                <p>These cookies are required to enable the basic functionality of the web page.</p>
+                            </div>
+                            <div class="cookie-modal-advanced-selectors-selector">
+                                <label for="functional-cookies" class="custom-checkbox">
+                                    Functional Cookies
+                                    <input type="checkbox" id="functional-cookies">
+                                    <span class="custom-checkbox-box">
+                                        <img src="/ico/icon-check.svg" alt="">
+                                    </span>
+                                </label>
+                                <p>Cookies that allow us to analyze site usage so we can measure and improve the performance.</p>
+                            </div>
+                        </div>
+                        <div class="cookie-modal-advanced-description">
+                            <span>Permissible functionality of examples</span>
+                            <ul class="cookie-descriptions">
+                                <li class="cookie-descriptions-description is-active">Enable secure login</li>
+                                <li class="cookie-descriptions-description is-active">Track order steps</li>
+                                <li class="cookie-descriptions-description cookie-descriptions-description-functional">Logging in details of the application</li>
+                                <li class="cookie-descriptions-description cookie-descriptions-description-functional">Memory items in the shopping cart</li>
+                                <li class="cookie-descriptions-description cookie-descriptions-description-functional">Equal appearance of the site</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cookie-modal-buttons">
+                        <button id="buttonSelectedCookies" class="btn btn-primary accept-cookies" data-dismiss="alert" data-cookie-string="@cookieString">I ACCEPT SELECTED COOKIES</button>
+                    </div>
+                </div>
+                <div class="modal-window-footer">
+                    <p>Read more about our <a asp-controller="Policy" asp-action="Privacy"> Privacy Policy</a> or the way we use <a asp-controller="Cookies" asp-action="Index">Cookies</a> here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <environment include="Development">
+        <script src="~/js/cookies/cookies.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/cookies/cookies.min.js"></script>
+    </environment>
+
+}

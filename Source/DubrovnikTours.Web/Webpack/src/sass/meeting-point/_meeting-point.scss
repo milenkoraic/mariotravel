@@ -1,0 +1,80 @@
+@import '../mixins/flex';
+.page-meeting-point {
+    &-title {
+        font-weight: bold;
+    }
+    .page-header {
+        background-image: url(#{$imageMeetingPointPath}not-game-of-thrones.jpg);
+        height: 400px;
+        @media (max-width: 991px) {
+            height: 300px;
+        }
+    }
+    .meeting-point {
+        background-image: url(#{$imageLayoutPath}dubrovnik-fountain.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: left;
+        padding-left: 0;
+        &-image-intro {
+            margin-top: 30px;
+            background-color: $white;
+            color: $text-gray;
+            font-weight: 500;
+            margin-bottom: 0;
+            border-radius: 10px 10px 0px 0px;
+            padding: 10px;
+            text-align: left;
+        }
+        &-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        &-image-intro{
+            margin-top: 80px;
+        }
+        &-content {
+            padding-top: 70px;
+            padding-bottom: 70px;
+            @media (max-width: 991px) {
+                padding: 20px;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                height: auto;
+                left: 0;
+            }
+        }
+        &-lines {
+            text-align: left;
+            left: 50px;
+            width: 100%;
+        }
+        &-get-directions-btn-img {
+            display: inline-block;
+            margin-right: 5px;
+            height: 20px;
+            width: 20px;
+        }
+        &-get-directions-btn {
+            cursor: pointer;
+            background-color: $secondary;
+            color: $white;
+            font-weight: 600;
+            display: inline-block;
+            width: auto;
+            padding: 10px;
+            margin: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            display: none;
+            @media (max-width: 991px) {
+                display: inline-block;
+            }
+        }
+        &-map {
+            margin-bottom:20px;
+        }
+    }
+}

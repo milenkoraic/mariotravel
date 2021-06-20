@@ -1,0 +1,45 @@
+@import '../mixins/flex';
+.page-contact {
+    .page-header {
+        background-image: url(#{$imageContactUsPath}contact-header.jpg);
+        height: 400px;
+        @media (max-width: 991px) {
+            height: 300px;
+        }
+    }
+    &-content {
+        max-width: 800px;
+        width: 100%;
+        margin: 50px auto;
+        padding: 0 20px;
+        p {
+            font-size: 14px;
+            line-height: 21px;
+            color: $text-gray;
+        }
+        &-contacts {
+            margin-top: 50px;
+            @include flex(space-between, flex-start, column);
+            @media (min-width: 800px) {
+                @include flex(space-between, flex-start, row);
+            }
+            form {
+                margin-bottom: 0px;
+            }
+            .footer-info {
+                @media (max-width: 967px) {
+                    display: none;
+                }
+            }
+            .footer-info-item:first-child {
+                svg {
+                    margin-right: 31px !important;
+                }
+            }
+        }
+    }
+}
+
+.gray {
+    color: black;
+}

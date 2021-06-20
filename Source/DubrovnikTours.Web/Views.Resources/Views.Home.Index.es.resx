@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="14th August, 2019" xml:space="preserve">
+    <value>14 de agosto de 2019</value>
+  </data>
+  <data name="Amazing views without the cable car!" xml:space="preserve">
+    <value>Impresionantes vistas sin el teleférico!</value>
+  </data>
+  <data name="August 14, 2019" xml:space="preserve">
+    <value>14 de agosto de 2019</value>
+  </data>
+  <data name="Book Online" xml:space="preserve">
+    <value>Libro en línea</value>
+  </data>
+  <data name="CHECK OUR TRIP ADVISOR REVIEWS!" xml:space="preserve">
+    <value>¡COMPRUEBE NUESTRAS REVISIONES DE ASESOR DE VIAJE!</value>
+  </data>
+  <data name="Discover Dubrovnik - Old Town" xml:space="preserve">
+    <value>Descubre Dubrovnik - Casco antiguo</value>
+  </data>
+  <data name="Dubrovnik is unique, it’ s beauty leaves many people speechless. For 500 years we were one of the smallest and richest Republics in the world, without any armies. Learn what is so special about Dubrovnik’s diplomacy!" xml:space="preserve">
+    <value>Dubrovnik es único, su belleza deja a muchas personas sin palabras. Durante 500 años hemos sido una de las repúblicas más pequeñas y ricas del mundo, sin ejércitos. ¡Aprenda qué tiene de especial la diplomacia de Dubrovnik!</value>
+  </data>
+  <data name="Dubrovnik panoramic sightseeing tour" xml:space="preserve">
+    <value>Visita panorámica de Dubrovnik</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Duración</value>
+  </data>
+  <data name="Game of Thrones and Iron Throne tour in Dubrovnik" xml:space="preserve">
+    <value>Tour de Juego de Tronos y Trono de Hierro en Dubrovnik</value>
+  </data>
+  <data name="Game of Thrones Driving Tour" xml:space="preserve">
+    <value>Tour de conducción de Juego de Tronos</value>
+  </data>
+  <data name="Game of Thrones Walking Tour" xml:space="preserve">
+    <value>Recorrido a pie de Juego de Tronos</value>
+  </data>
+  <data name="GET DIRECTIONS" xml:space="preserve">
+    <value>OBTENER LAS DIRECCIONES</value>
+  </data>
+  <data name="hours" xml:space="preserve">
+    <value>horas</value>
+  </data>
+  <data name="MEETING POINT" xml:space="preserve">
+    <value>PUNTO DE ENCUENTRO</value>
+  </data>
+  <data name="Mostar with Kravice Waterfalls from Dubrovnik" xml:space="preserve">
+    <value>Mostar con cascadas de Kravice desde Dubrovnik</value>
+  </data>
+  <data name="Perfect End to Our Trip!" xml:space="preserve">
+    <value>¡Fin perfecto para nuestro viaje!</value>
+  </data>
+  <data name="PRIVATE" xml:space="preserve">
+    <value>PRIVADOS</value>
+  </data>
+  <data name="Private Tours" xml:space="preserve">
+    <value>Tours Privados</value>
+  </data>
+  <data name="Review of:" xml:space="preserve">
+    <value>Repaso de:</value>
+  </data>
+  <data name="SCHEDULED" xml:space="preserve">
+    <value>PROGRAMADOS</value>
+  </data>
+  <data name="Scheduled Tours" xml:space="preserve">
+    <value>Tours Programados</value>
+  </data>
+  <data name="Service with smile!" xml:space="preserve">
+    <value>Servicio con sonrisa!</value>
+  </data>
+  <data name="Since 2011 Dubrovnik is used as a setting for the most popular show ever. Season 2, 3, 4, 5, 6 and 7 were filmed all around the world. All of our guides are licenced professionals with experience on set and devoted GoT fans!" xml:space="preserve">
+    <value>Desde 2011, Dubrovnik se ha utilizado como escenario del espectáculo más popular de la historia. Las temporadas 2, 3, 4, 5, 6 y 7 fueron filmadas en todo el mundo. ¡Todas nuestras guías son profesionales con licencia con experiencia en sets y fanáticos dedicados de GoT!</value>
+  </data>
+  <data name="The driving tour includes all locations that were used for filming and can not be seen by walking from Old Town." xml:space="preserve">
+    <value>El recorrido en automóvil incluye todos los lugares que se usaron para filmar y que no se podían ver caminando desde el casco antiguo.</value>
+  </data>
+  <data name="The meeting point is &lt;strong&gt;Amerling fountain on Brsalje Square&lt;/strong&gt; (&lt;span&gt;Ul. Svetog Đurđa 4, 20000, Dubrovnik&lt;/span&gt;), located in front of “Dubravka” restaurant (Ul. Brsalje 1). The Guide will be waiting next to the Amerling fountain with a Targaryan or Dubrovnik Tours flag.&lt;/p&gt;" xml:space="preserve">
+    <value>El punto de encuentro es la &lt;strong&gt; fuente Amerling en la plaza Brsalje &lt;/strong&gt; (&lt;span&gt; Ul. Svetog Đurđa 4, 20000, Dubrovnik &lt;/span&gt;), ubicada frente al restaurante "Dubravka" (Ul. Brsalje 1). El guía estará esperando junto a la fuente Amerling con una bandera de Targaryan o Dubrovnik Tours. &lt;/p&gt;</value>
+  </data>
+  <data name="This tour is a great alternative to going up the cable car.Not only is the whole tour less expensive than the cable car ride, but you also get a tour in an air - conditioned vehicle to other sites as well.All the photo stops were beautiful; especially the view from the top of Mt. Srd was amazing, especially at sunset!&#xD;&#xA;                        Our driver / tour guide, Lazar was not only an informative guide and skilled driver, but he also is a talented photographer, and offered to take photos of us at each of the viewpoints.The photos he took of us were worth the price of the tour alone.It was like having a private driver, tour guide, and personal photographer!&#xD;&#xA;                        Well organized and well worth the money; very good alternative to the cable car." xml:space="preserve">
+    <value>Este recorrido es una excelente alternativa para subir al teleférico. No solo es todo el recorrido menos costoso que el viaje en teleférico, sino que también puede realizar un recorrido en un vehículo con aire acondicionado a otros sitios también. hermosa; especialmente la vista desde la cima del monte. Srd fue increíble, especialmente al atardecer! Nuestro conductor / guía turístico, Lazar no solo fue un guía informativo y un conductor experto, sino que también es un fotógrafo talentoso, y se ofreció a tomarnos fotos en cada uno de los puntos de vista. recorrido solo ¡Era como tener un conductor privado, un guía turístico y un fotógrafo personal! Bien organizado y bien vale la pena el dinero; Muy buena alternativa al teleférico.</value>
+  </data>
+  <data name="Unlike the other tours I overheard along the way.&#xD;&#xA;                        Jelena was absolutely THE most laid back and knowledgeable person/ tour guide.&#xD;&#xA;                        Had a great time, a lot of laughs, a lot of knowledge, and an unforgettable experience!!&#xD;&#xA;                        This is the tour to go on if you are a game of thrones fan.&#xD;&#xA;                        I felt like a really good friend was giving me a tour vs an average typical tour guide.&#xD;&#xA;                        The groups are small which allows you to really immerse yourself in the experience and allows time for questions, pictures, videos and so much more!! Was very happy and recommend to everyone who is interested.&#xD;&#xA;                        *Small group tours is what you want and that’s what you get instead of a mob of 20+ people. It allows for a more intimate experience unlike any other!!!" xml:space="preserve">
+    <value>A diferencia de los otros tours que escuché en el camino. Jelena fue absolutamente la persona más relajada y conocedora / guía turística.
+ ¡Lo pasamos muy bien, muchas risas, mucho conocimiento y una experiencia inolvidable! Este es el recorrido a seguir si eres un fanático de Game of Thrones. Sentí que un muy buen amigo me estaba dando un recorrido en comparación con un guía turístico típico promedio.  ¡Los grupos son pequeños, lo que te permite sumergirte realmente en la experiencia y da tiempo para preguntas, fotos, videos y mucho más! Quedé muy contento y lo recomiendo a todos los interesados. * Los recorridos en grupos pequeños son lo que quieres y eso es lo que obtienes en lugar de una multitud de más de 20 personas. ¡Permite una experiencia más íntima como ninguna otra!</value>
+  </data>
+  <data name="VIEW MORE" xml:space="preserve">
+    <value>VER MÁS</value>
+  </data>
+  <data name="We call Carlos on Friday night to book the tour.&#xD;&#xA;                        All done. Sunday morning Rosa and Ivan picked us up and few others.&#xD;&#xA;                        The tour was excellent and Rosa was a excellent guide. Smiles all the way on the trip.&#xD;&#xA;                        Differently reckon mind them." xml:space="preserve">
+    <value>Llamamos a Carlos el viernes por la noche para reservar el recorrido.
+Todo listo. El domingo por la mañana, Rosa e Iván nos recogieron a nosotros y a algunos otros. El recorrido fue excelente y Rosa fue una excelente guía. Sonrisas durante todo el viaje. Diferentemente les importa.</value>
+  </data>
+  <data name="We were in search of a cable car ride when we stumbled across this site.&#xD;&#xA;                        It had been raining most the day so we were afraid that it would be impossible.&#xD;&#xA;                        The gentleman in the store told us we’d get a better value if we took the sightseeing tour and he was not wrong.&#xD;&#xA;                        We chose the sunset tour at 1830 and we ended up being the only two so indeed it was a private tour.&#xD;&#xA;                        Our guide Lazar was super personable and extremely knowledgeable of the locations we arrived at(not a bad photographer either)&#xD;&#xA;                        The sunset tour from the cable car view was extremely peaceful and beautiful!&#xD;&#xA;                        I highly recommend taking the sunset tour, the sun setting over the Elafiti Islands was breathtaking as well as over Old Town.&#xD;&#xA;                        I wish we could have stayed longer to visit more tours with this company." xml:space="preserve">
+    <value>Estábamos buscando un teleférico cuando nos topamos con este sitio. Había estado lloviendo la mayor parte del día, así que temíamos que fuera imposible.  El caballero de la tienda nos dijo que obtendríamos un mejor valor si hacíamos el recorrido turístico y que no estaba equivocado. Elegimos el tour al atardecer en 1830 y terminamos siendo los únicos dos, así que de hecho fue un tour privado. Nuestro guía Lazar fue súper agradable y extremadamente conocedor de los lugares a los que llegamos (tampoco es un mal fotógrafo) ¡El recorrido al atardecer desde la vista del teleférico fue extremadamente tranquilo y hermoso!
+Recomiendo encarecidamente tomar el tour al atardecer, la puesta de sol sobre las islas Elafiti fue impresionante, así como sobre el casco antiguo. Ojalá nos hubiéramos quedado más tiempo para visitar más tours con esta compañía.</value>
+  </data>
+</root>

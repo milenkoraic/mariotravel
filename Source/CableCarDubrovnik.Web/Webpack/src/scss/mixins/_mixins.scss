@@ -1,0 +1,15 @@
+@mixin heading-font {
+    font-family: 'Raleway';
+}
+
+@mixin body-font {
+    font-family: 'Lora';
+}
+
+@mixin flex($justify: flex-start, $align: flex-start, $direction: row, $wrap: nowrap) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}

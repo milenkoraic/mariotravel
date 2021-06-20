@@ -1,0 +1,360 @@
+﻿@using Microsoft.Extensions.Options
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model IEnumerable<DubrovnikTours.Web.Models.Home.TourCollectionByTypeViewModel>
+@inject IOptions<MarioTravel.Core.Configuration.Api.Keys.GoogleMaps> GoogleMaps
+
+
+    <div class="page page-home">
+        <div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="8000">
+            <div class="carousel-inner">
+                <a class="carousel-control-prev" data-target="#myCarousel" onclick="return false" role="button" data-slide="prev">
+                    <svg class="carousel-arrow carousel-arrow-prev"
+                         width="52"
+                         height="52"
+                         viewBox="0 0 52 52"
+                         fill="transparent"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <circle r="25" transform="matrix(-1 0 0 1 26 26)" stroke="white" fill="transparent" stroke-width="2" />
+                        <path d="M38 29H16L26.3459 18" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a class="carousel-control-next" data-target="#myCarousel" onclick="return false" role="button" data-slide="next">
+                    <svg class="carousel-arrow carousel-arrow-next carousel-control-next" data-slide="next"
+                         width="52"
+                         height="52"
+                         viewBox="0 0 52 52"
+                         fill="transparent"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="26" cy="26" r="25" stroke="white" stroke-width="2" />
+                        <path d="M14 29H36L25.6541 18" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+                    @foreach (var tourCollection in Model)
+                    {
+                        if (tourCollection.Tours.Any())
+                        {
+                            @foreach (var tour in tourCollection.Tours)
+                            {
+                                if (tour.LanguageId == 1)
+                                {
+                                    int tourId = tour.Id;
+                                    switch (tourId)
+                                    {
+                                        case 39:
+                                            <div class="item active background a">
+                                                <div class="covertext">
+                                                    <h3 class="hero-slider-slide-title">@tour.Title<span class="hero-slider-slide-title-ghost">DISCOVER</span></h3>
+                                                    <p class="hero-slider-slide-description">@tour.Description</p>
+                                                    <div class="hero-slider-slide-buttons">
+                                                        <a asp-controller="Tour" asp-action="TourBooking" asp-route-id="@tour.Id" asp-route-slug="@tour.Slug" class="hero-slider-slide-buttons-btn btn-primary">@Localizer["Book Online"]</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            break;
+                                        case 40:
+                                            <div class="item background b">
+                                                <div class="covertext">
+                                                    <h3 class="hero-slider-slide-title">@tour.Title<span class="hero-slider-slide-title-ghost">DISCOVER</span></h3>
+                                                    <p class="hero-slider-slide-description">@tour.Description</p>
+                                                    <div class="hero-slider-slide-buttons">
+                                                        <a asp-controller="Tour" asp-action="TourBooking" asp-route-id="@tour.Id" asp-route-slug="@tour.Slug" class="hero-slider-slide-buttons-btn btn-primary">@Localizer["Book Online"]</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            break;
+                                        case 41:
+                                            <div class="item background c">
+                                                <div class="covertext">
+                                                    <h3 class="hero-slider-slide-title">@tour.Title<span class="hero-slider-slide-title-ghost">DISCOVER</span></h3>
+                                                    <p class="hero-slider-slide-description">@tour.Description</p>
+                                                    <div class="hero-slider-slide-buttons">
+                                                        <a asp-controller="Tour" asp-action="TourBooking" asp-route-id="@tour.Id" asp-route-slug="@tour.Slug" class="hero-slider-slide-buttons-btn btn-primary">@Localizer["Book Online"]</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            break;
+                                    }
+
+                                }
+                                else if (tour.LanguageId == 2)
+                                {
+                                    int tourId = tour.Id;
+                                    switch (tourId)
+                                    {
+                                        case 42:
+                                            <div class="item active background a">
+                                                <div class="covertext">
+                                                    <h3 class="hero-slider-slide-title">@tour.Title<span class="hero-slider-slide-title-ghost">DISCOVER</span></h3>
+                                                    <p class="hero-slider-slide-description">@tour.Description</p>
+                                                    <div class="hero-slider-slide-buttons">
+                                                        <a asp-controller="Tour" asp-action="TourBooking" asp-route-id="@tour.Id" asp-route-slug="@tour.Slug" class="hero-slider-slide-buttons-btn btn-primary">@Localizer["Book Online"]</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            break;
+                                        case 43:
+                                            <div class="item background b">
+                                                <div class="covertext">
+                                                    <h3 class="hero-slider-slide-title">@tour.Title<span class="hero-slider-slide-title-ghost">DISCOVER</span></h3>
+                                                    <p class="hero-slider-slide-description">@tour.Description</p>
+                                                    <div class="hero-slider-slide-buttons">
+                                                        <a asp-controller="Tour" asp-action="TourBooking" asp-route-id="@tour.Id" asp-route-slug="@tour.Slug" class="hero-slider-slide-buttons-btn btn-primary">@Localizer["Book Online"]</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            break;
+                                        case 44:
+                                            <div class="item background c">
+                                                <div class="covertext">
+                                                    <h3 class="hero-slider-slide-title">@tour.Title<span class="hero-slider-slide-title-ghost">DISCOVER</span></h3>
+                                                    <p class="hero-slider-slide-description">@tour.Description</p>
+                                                    <div class="hero-slider-slide-buttons">
+                                                        <a asp-controller="Tour" asp-action="TourBooking" asp-route-id="@tour.Id" asp-route-slug="@tour.Slug" class="hero-slider-slide-buttons-btn btn-primary">@Localizer["Book Online"]</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            break;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+            </div>
+        </div>
+        <div class="tours">
+            <div class="tours-tabs">
+                @foreach (var tourCollection in Model)
+                        {
+                            if (tourCollection.Tours.Any())
+                            {
+                                @if (tourCollection.Type == "Scheduled")
+                                {
+                            <a class="tours-tabs-tab is-active" href="#tours" onclick="return false" data-show-tab="@tourCollection.Type.ToLower()">
+                                <svg width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    #1868b3
+                                    <path d="M41 34.5V36C41 38.7614 38.7614 41 36 41H6C3.23858 41 1 38.7614 1 36V6C1 3.23858 3.23858 1 6 1H36C38.7614 1 41 3.23858 41 6V19.5" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M37 27H45" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M41 23L41 31" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M1 10H41" stroke="white" stroke-width="1.25" />
+                                    <path d="M18.81 17.75V15.878H22.554V29H20.484V17.75H18.81Z" fill="white" />
+                                </svg>
+                                <span class="tours-tabs-tab-text">@Localizer[@tourCollection.Type.ToUpper()]</span>
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="tours-tabs-tab" href="#tours" onclick="return false" data-show-tab="@tourCollection.Type.ToLower()">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M35 40H5C4.34339 40 3.69321 39.8707 3.08658 39.6194C2.47995 39.3681 1.92876 38.9998 1.46447 38.5355C1.00017 38.0712 0.631876 37.52 0.380602 36.9134C0.129329 36.3068 0 35.6566 0 35L0 5C0 3.67392 0.526784 2.40215 1.46447 1.46447C2.40215 0.526784 3.67392 0 5 0H35C36.3261 0 37.5979 0.526784 38.5355 1.46447C39.4732 2.40215 40 3.67392 40 5V35C40 35.6566 39.8707 36.3068 39.6194 36.9134C39.3681 37.52 38.9998 38.0712 38.5355 38.5355C38.0712 38.9998 37.52 39.3681 36.9134 39.6194C36.3068 39.8707 35.6566 40 35 40ZM5 1.25C4.00625 1.25264 3.05396 1.64858 2.35127 2.35127C1.64858 3.05396 1.25264 4.00625 1.25 5V35C1.25 35.9946 1.64509 36.9484 2.34835 37.6517C3.05161 38.3549 4.00544 38.75 5 38.75H35C35.9946 38.75 36.9484 38.3549 37.6516 37.6517C38.3549 36.9484 38.75 35.9946 38.75 35V5C38.7474 4.00625 38.3514 3.05396 37.6487 2.35127C36.946 1.64858 35.9938 1.25264 35 1.25H5Z" fill="white" />
+                                    <path d="M31.9923 17.5716C32.0026 17.4961 32.0026 17.4195 31.9923 17.344C31.9436 17.2115 31.8599 17.0946 31.7501 17.0058C31.6403 16.917 31.5085 16.8595 31.3686 16.8396L24.0034 15.8504L20.6673 9.40091C20.5995 9.27936 20.5004 9.17812 20.3804 9.10764C20.2603 9.03716 20.1235 9 19.9843 9C19.845 9 19.7083 9.03716 19.5882 9.10764C19.4681 9.17812 19.369 9.27936 19.3012 9.40091L16.0245 15.8108L8.65934 16.8C8.51834 16.8167 8.38495 16.8729 8.27459 16.9622C8.16422 17.0515 8.0814 17.1701 8.03568 17.3045C7.99267 17.4371 7.98845 17.5792 8.02353 17.7142C8.0586 17.8491 8.13151 17.9712 8.23367 18.0661L13.5596 23.0121L12.3023 30.055C12.2776 30.1936 12.2934 30.3364 12.3479 30.4662C12.4023 30.596 12.493 30.7074 12.6092 30.787C12.7417 30.8742 12.8961 30.9222 13.0547 30.9255C13.1791 30.9266 13.3018 30.8959 13.4111 30.8365L19.9843 27.592L26.5773 30.9156C26.7035 30.9786 26.8441 31.0072 26.9849 30.9985C27.1256 30.9898 27.2616 30.9442 27.3791 30.8662C27.4953 30.7866 27.586 30.6752 27.6405 30.5453C27.6949 30.4155 27.7107 30.2727 27.686 30.1342L26.4288 23.0912L31.7547 18.1453C31.8324 18.0717 31.8937 17.9826 31.9346 17.8837C31.9756 17.7849 31.9952 17.6785 31.9923 17.5716ZM15.1633 22.9626C15.1847 22.8419 15.1751 22.7177 15.1353 22.6018C15.0954 22.4858 15.0267 22.3819 14.9356 22.2998L10.4412 18.0958L16.6581 17.2253C16.7798 17.2065 16.8957 17.1601 16.9969 17.0899C17.0981 17.0196 17.182 16.9272 17.2421 16.8198L19.9843 11.3991L22.766 16.8198C22.8262 16.9272 22.91 17.0196 23.0112 17.0899C23.1124 17.1601 23.2283 17.2065 23.3501 17.2253L29.5669 18.0958L25.0726 22.2998C24.9822 22.3825 24.914 22.4864 24.8742 22.6022C24.8344 22.718 24.8243 22.8419 24.8449 22.9626L25.914 28.8977L20.3407 26.0785C20.2291 26.0264 20.1074 25.9994 19.9843 25.9994C19.8611 25.9994 19.7395 26.0264 19.6279 26.0785L14.0446 28.9175L15.1633 22.9626Z" fill="white" />
+                                </svg>
+                                <span class="tours-tabs-tab-text">@Localizer[@tourCollection.Type.ToUpper()]</span>
+                            </a>
+                        }
+                    }
+                }
+            </div>
+            <div id="tours"></div>
+            <div class="container">
+                <div id="home-fix"></div>
+                @{
+                    var isFirst = true;
+                }
+
+                @foreach (var tourCollection in Model)
+                        {
+                            if (tourCollection.Tours.Any())
+                            {
+                                var tourType = tourCollection.Type.ToLowerInvariant();
+                        <div class="tours-cards" data-tab="@tourType" @{if (!isFirst) { <text> style="display: none;" </text>  } }>
+                            <svg id="@tourType-arrow-prev" class="tours-slider-arrow tours-slider-arrow-prev" width="52" height="52" viewBox="0 0 52 52" fill="transparent" xmlns="http://www.w3.org/2000/svg">
+                                <circle r="25" transform="matrix(-1 0 0 1 26 26)" stroke="white" fill="transparent" stroke-width="2" />
+                                <path d="M38 29H16L26.3459 18" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <svg id="@tourType-arrow-next" class="tours-slider-arrow tours-slider-arrow-next" width="52" height="52" viewBox="0 0 52 52" fill="transparent" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="26" cy="26" r="25" stroke="white" stroke-width="2" />
+                                <path d="M14 29H36L25.6541 18" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div id="@tourType-slider" class="tours-cards-slider">
+                                @foreach (var tour in tourCollection.Tours)
+                        {
+                                    <div class="card">
+                                        <a class="card-link" asp-controller="Tour" asp-action="TourBooking" asp-route-id="@tour.Id" asp-route-slug="@tour.Slug" aria-hidden="true"></a>
+                                        <div class="card-discount">
+                                            <span>SAVE</span>
+                                            <strong>@(tour.DiscountPercent)%</strong>
+                                        </div>
+                                        <img class="card-image lazy" src="/ico/blank.svg" data-original="@Url.Content(tour.MainImage.Url)" alt="@tour.MainImage.AltDescription" />
+                                        <div class="card-body fade-out">
+                                            <span class="card-title">@tour.Title</span>
+                                            <span class="card-category">@Localizer[@tourCollection.Type]</span>
+                                            <p class="card-description">@tour.Description</p>
+                                        </div>
+
+                                        <div class="card-info">
+                                            <span class="card-duration">@Localizer["Duration"].Value.ToUpper():</span><span class="card-duration">&nbsp; @tour.DisplayDuration @Localizer["hours"]</span>
+                                            <div class="card-footer">
+                                                <span class="card-price">@tour.DisplayPrice </span>
+                                                <svg class="card-footer-icon card-footer-see-more" width="38" height="7" viewBox="0 0 38 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 6.5H37L31 1" stroke="#18b0d0" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                                <svg class="card-footer-icon card-footer-schedule" width="30" height="30" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M22.3318 13.0874V5.28155C22.3318 3.88349 21.1811 2.7767 19.7944 2.7767H16.6374V1.90291C16.6374 1.40777 16.2243 1 15.7228 1C15.2212 1 14.8081 1.40777 14.8081 1.90291V2.74757H8.52365V1.90291C8.52365 1.40777 8.11059 1 7.60901 1C7.10743 1 6.69437 1.40777 6.69437 1.90291V2.74757H3.53739C2.12117 2.74757 1 3.8835 1 5.25243V18.8835C1 20.2816 2.15068 21.3883 3.53739 21.3883H13.8935C14.336 25.0874 17.552 28 21.4171 28C25.6068 28 28.9998 24.6505 28.9998 20.5146C29.0293 16.699 26.1083 13.5243 22.3318 13.0874ZM3.53739 4.5534H6.69437V5.39806C6.69437 5.8932 7.10743 6.30097 7.60901 6.30097C8.11059 6.30097 8.52365 5.8932 8.52365 5.39806V4.5534H14.8081V5.39806C14.8081 5.8932 15.2212 6.30097 15.7228 6.30097C16.2243 6.30097 16.6374 5.8932 16.6374 5.39806V4.5534H19.7944C20.2074 4.5534 20.532 4.87379 20.532 5.28155V8.33981H2.82928V5.28155C2.82928 4.87379 3.15383 4.5534 3.53739 4.5534ZM2.82928 18.9126V10.1165H20.532V13.0874C17.08 13.4951 14.336 16.2039 13.923 19.6116H3.53739C3.15383 19.6116 2.82928 19.2913 2.82928 18.9126ZM21.4466 26.2233C18.2601 26.2233 15.6637 23.6602 15.6637 20.5146C15.6637 17.3689 18.2601 14.835 21.4466 14.835C24.6331 14.835 27.2295 17.3981 27.2295 20.5437C27.2295 23.6893 24.6331 26.2233 21.4466 26.2233Z" fill="white" stroke="white" stroke-width="0.75" />
+                                                    <path d="M23.9545 19.6129H22.3317V17.4576C22.3317 16.9625 21.9187 16.5547 21.4171 16.5547C20.9155 16.5547 20.5024 16.9625 20.5024 17.4576V20.5159C20.5024 21.011 20.9155 21.4188 21.4171 21.4188H23.9545C24.456 21.4188 24.8691 21.011 24.8691 20.5159C24.8691 20.0207 24.456 19.6129 23.9545 19.6129Z" fill="white" stroke="white" stroke-width="0.75" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+
+                    isFirst = false;
+                }
+            </div>
+        </div>
+        <div class="reviews container">
+            <div class="container text-center">
+                <h3 class="reviews-title">@Localizer["CHECK OUR TRIP ADVISOR REVIEWS!"]</h3>
+            </div>
+            <div class="reviews-container">
+                <a href="https://www.tripadvisor.com/Attraction_Review-g295371-d10435358-Reviews-Private_Tours_Dubrovnik-Dubrovnik_Dubrovnik_Neretva_County_Dalmatia.html" target="_blank" rel="noopener">
+                    <div class="reviews-badge">
+                        <img src="/ico/trip-advisor.svg" alt="Trip Advisor">
+                    </div>
+                </a>
+                <div class="reviews-right">
+                    <div class="reviews-slider-container">
+                        <div class="reviews-review">
+                            <div class="reviews-review-header">
+                                <div class="reviews-review-header-rating">
+                                    <div class="reviews-review-header-rating-stars">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                    </div><span class="reviews-head"><br>Best GOT tour EVER!!!</span>
+                                </div>
+                                <p class="reviews-review-header-date">August 12, 2019</p>
+                            </div>
+                            <p class="reviews-review-body">
+                                @Localizer["Review of:"] <br /><b>@Localizer["Game of Thrones and Iron Throne tour in Dubrovnik"]</b><br /><br />
+                                @Localizer[@"Unlike the other tours I overheard along the way.
+                                Jelena was absolutely THE most laid back and knowledgeable person/ tour guide.
+                                Had a great time, a lot of laughs, a lot of knowledge, and an unforgettable experience!!
+                                This is the tour to go on if you are a game of thrones fan.
+                                I felt like a really good friend was giving me a tour vs an average typical tour guide.
+                                The groups are small which allows you to really immerse yourself in the experience and allows time for questions, pictures, videos and so much more!! Was very happy and recommend to everyone who is interested.
+                                *Small group tours is what you want and that’s what you get instead of a mob of 20+ people. It allows for a more intimate experience unlike any other!!!"]
+                            </p>
+                            <p class="reviews-review-footer">VinnyTravels88</p>
+                        </div>
+                        <div class="reviews-review">
+                            <div class="reviews-review-header">
+                                <div class="reviews-review-header-rating">
+                                    <div class="reviews-review-header-rating-stars">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                    </div><span class="reviews-head"><br>Perfect End to Our Trip!</span>
+                                </div>
+                                <p class="reviews-review-header-date">August 14, 2019</p>
+                            </div>
+                            <p class="reviews-review-body">
+                                @Localizer["Review of:"] <br /> <b>@Localizer["Dubrovnik panoramic sightseeing tour"]</b><br /><br />
+                                @Localizer[@"We were in search of a cable car ride when we stumbled across this site.
+                                It had been raining most the day so we were afraid that it would be impossible.
+                                The gentleman in the store told us we’d get a better value if we took the sightseeing tour and he was not wrong.
+                                We chose the sunset tour at 1830 and we ended up being the only two so indeed it was a private tour.
+                                Our guide Lazar was super personable and extremely knowledgeable of the locations we arrived at(not a bad photographer either)
+                                The sunset tour from the cable car view was extremely peaceful and beautiful!
+                                I highly recommend taking the sunset tour, the sun setting over the Elafiti Islands was breathtaking as well as over Old Town.
+                                I wish we could have stayed longer to visit more tours with this company."]
+                            </p>
+                            <p class="reviews-review-footer">@Localizer["Shuntel E <br> Banbury, United Kingdom"]</p>
+                        </div>
+                        <div class="reviews-review">
+                            <div class="reviews-review-header">
+                                <div class="reviews-review-header-rating">
+                                    <div class="reviews-review-header-rating-stars">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                    </div><span class="reviews-head"><br>@Localizer["Service with smile!"]</span>
+                                </div>
+                                <p class="reviews-review-header-date">June 23, 2019</p>
+                            </div>
+                            <p class="reviews-review-body">
+                                @Localizer["Review of:"] <br /> <b>@Localizer["Mostar with Kravice Waterfalls from Dubrovnik"]</b><br /><br />
+                                @Localizer[@"We call Carlos on Friday night to book the tour.
+                                All done. Sunday morning Rosa and Ivan picked us up and few others.
+                                The tour was excellent and Rosa was a excellent guide. Smiles all the way on the trip.
+                                Differently reckon mind them."]
+                            </p>
+                            <p class="reviews-review-footer">347dipaks</p>
+                        </div>
+                        <div class="reviews-review">
+                            <div class="reviews-review-header">
+                                <div class="reviews-review-header-rating">
+                                    <div class="reviews-review-header-rating-stars">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                        <img src="/ico/star.svg" alt="star">
+                                    </div><span class="reviews-head"><br>@Localizer["Amazing views without the cable car!"]</span>
+                                </div>
+                                <p class="reviews-review-header-date">@Localizer["14th August, 2019"]</p>
+                            </div>
+                            <p class="reviews-review-body">
+                                @Localizer["Review of:"] <b>@Localizer["Dubrovnik panoramic sightseeing tour"]</b><br />
+                                @Localizer[@"This tour is a great alternative to going up the cable car.Not only is the whole tour less expensive than the cable car ride, but you also get a tour in an air - conditioned vehicle to other sites as well.All the photo stops were beautiful; especially the view from the top of Mt. Srd was amazing, especially at sunset!
+                                Our driver / tour guide, Lazar was not only an informative guide and skilled driver, but he also is a talented photographer, and offered to take photos of us at each of the viewpoints.The photos he took of us were worth the price of the tour alone.It was like having a private driver, tour guide, and personal photographer!
+                                Well organized and well worth the money; very good alternative to the cable car."]
+                            </p>
+                            <p class="reviews-review-footer">Mark Z <br> St. John's, Newfoundland And Labrador</p>
+                        </div>
+                    </div>
+                    <div class="reviews-actions">
+                        <svg class="reviews-actions-prev" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle r="25" transform="matrix(-1 0 0 1 26 26)" stroke="#18b0d0" fill="transparent" stroke-width="2" />
+                            <path d="M38 29H16L26.3459 18" stroke="#18b0d0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> <a href="https://www.tripadvisor.com/Attraction_Review-g295371-d10435358-Reviews-Private_Tours_Dubrovnik-Dubrovnik_Dubrovnik_Neretva_County_Dalmatia.html" class="btn btn-primary" target="_blank" rel="noopener">@Localizer["View all reviews"]</a>
+                        <svg class="reviews-actions-next" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="26" cy="26" r="25" stroke="#18b0d0" fill="transparent" stroke-width="2" />
+                            <path d="M14 29H36L25.6541 18" stroke="#18b0d0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="meeting-point">
+            <div class="meeting-point-content">
+                <h3 style="font-weight:600;">@Localizer["MEETING POINT"].Value.ToUpper()</h3>
+                <p> @Localizer["The meeting point is <strong>Amerling fountain on Brsalje Square</strong> (<span>Ul. Svetog Đurđa 4, 20000, Dubrovnik</span>), located in front of “Dubravka” restaurant (Ul. Brsalje 1). The Guide will be waiting next to the Amerling fountain with a Targaryan or Dubrovnik Tours flag.</p>"]
+            </div>
+            <div id="meeting-point-map" class="meeting-point-map"></div>
+            <a href="https://www.google.com/maps/dir/Current+Location/42.6420133,18.1053201,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x134c0b124e77ea33:0x2c7a081aa89deb7b!2m2!1d18.1060751!2d42.6418024" target="_blank" rel="noopener">
+                <span class="meeting-point-get-directions-btn">
+                    <img class="meeting-point-get-directions-btn-img lazy" src="/ico/null.png" data-original="/ico/gps.png" alt="GPS Icon" /><span>@Localizer["GET DIRECTIONS"]</span>
+                </span>
+            </a>
+        </div>
+    </div>
+
+<environment include="Development">
+    <script src="~/js/googleMap/googleMap.js" type="text/javascript"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=@GoogleMaps.Value.ApiKey&callback=initMap'></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/js/googleMap/googleMap.min.js" type="text/javascript"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=@GoogleMaps.Value.ApiKey&callback=initMap'></script>
+</environment>
